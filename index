@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Orr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #faf8f5;
+            color: #3d3d3d;
+            line-height: 1.7;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(135deg, #f9f1f0, #fadcd9, #f8e8e0);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: #5c3d4e;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #8a6575;
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* ============ SOCIAL LINKS ============ */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .socials a {
+            background: #5c3d4e;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .socials a:hover {
+            background: #c48b9f;
+        }
+
+        /* ============ SECTIONS ============ */
+        .section {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: #5c3d4e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8cfd6;
+        }
+
+        /* ============ CARDS ============ */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c48b9f;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #5c3d4e;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #6b6b6b;
+            font-weight: 300;
+        }
+
+        /* ============ SKILLS ============ */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f4e1e6;
+            color: #5c3d4e;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #f8e8e0, #fadcd9, #f9f1f0);
+            color: #8a6575;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #5c3d4e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <h1>Elizabeth Orr</h1>
+        <p>Controls Engineer · Automation · Problem Solver</p>
+
+        <div class="socials">
+            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/elizathenerd" target="_blank">GitHub</a>
+            <a href="https://youtube.com/" target="_blank">YouTube</a>
+            <a href="https://instagram.com/" target="_blank">Instagram</a>
+        </div>
+    </header>
+
+    <!-- ====== ABOUT ME ====== -->
+    <div class="section">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                Welcome! I'm Elizabeth — a controls engineer with 
+                a passion for building systems that work. From 
+                chiller plants to automation tools, I love turning 
+                chaos into structure and making teams more 
+                efficient. When I'm not on a job site, you'll 
+                find me tinkering with code, mentoring new 
+                engineers, or looking for the next thing to learn.
+            </p>
+        </div>
+    </div>
+
+    <!-- ====== SKILLS ====== -->
+    <div class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span class="skill-tag">Chiller Systems</span>
+            <span class="skill-tag">HVAC Controls</span>
+            <span class="skill-tag">SCADA</span>
+            <span class="skill-tag">PLC Programming</span>
+            <span class="skill-tag">FactoryTalk / RSLinx</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Power Automate</span>
+            <span class="skill-tag">Project Leadership</span>
+        </div>
+    </div>
+
+    <!-- ====== PROJECTS ====== -->
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="card">
+            <h3>Chiller Staging & Recovery Logic</h3>
+            <p>
+                Developed intelligent staging logic for a 
+                20-chiller plant — handling power loss recovery, 
+                soft-start sequencing, and thermal overshoot 
+                prevention.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Standardized Deployment VM</h3>
+            <p>
+                Built a fully customized virtual machine from 
+                scratch with pre-configured networking, software, 
+                and tools — enabling day-one productivity for 
+                team members on new projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Power Automate Workflows</h3>
+            <p>
+                Created automated workflows connecting SharePoint 
+                and Excel for streamlined field data collection 
+                and reporting.
+            </p>
+        </div>
+    </div>
+
+    <!-- ====== CONTACT ====== -->
+    <div class="section">
+        <h2>Get In Touch</h2>
+        <div class="card">
+            <p>
+                I'm always open to connecting — whether it's 
+                about controls engineering, mentorship, or just 
+                a good conversation. Find me on any of the 
+                platforms linked above.
+            </p>
+        </div>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <p>
+            &copy; 2025 Elizabeth Orr · Built with coffee and curiosity
+        </p>
+    </footer>
+
+</body>
+</html>
