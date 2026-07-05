@@ -93,7 +93,7 @@
             position: absolute;
             width: 340px;
             height: 340px;
-            background: radial-gradient(circle, rgba(196, 139, 159, 0.08) 0%, transparent 65%);
+            background: radial-gradient(circle, rgba(240, 160, 184, 0.1) 0%, transparent 65%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -120,107 +120,113 @@
         /* ===== JIGGLYPUFF EARS ===== */
         .ear {
             position: absolute;
-            width: 44px;
-            height: 50px;
             z-index: 5;
-            top: -28px;
+            top: -18px;
         }
 
         .ear-left {
-            left: 30px;
-            transform: rotate(-18deg);
+            left: 22px;
+            transform: rotate(-15deg);
         }
 
         .ear-right {
-            right: 30px;
-            transform: rotate(18deg);
+            right: 22px;
+            transform: rotate(15deg);
         }
 
         .ear-outer {
-            width: 100%;
-            height: 100%;
+            width: 52px;
+            height: 42px;
             background: #f0a0b8;
-            clip-path: polygon(50% 0%, 2% 100%, 98% 100%);
+            border-radius: 12px 12px 0 0;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            position: relative;
         }
 
         .ear-inner {
             position: absolute;
-            width: 50%;
-            height: 42%;
-            background: #2d1f26;
-            clip-path: polygon(50% 18%, 8% 100%, 92% 100%);
-            top: 32%;
-            left: 25%;
+            width: 28px;
+            height: 22px;
+            background: #2a2a2e;
+            clip-path: polygon(50% 10%, 5% 100%, 95% 100%);
+            top: 12px;
+            left: 12px;
         }
 
         /* ===== HAIR CURL ===== */
         .hair-curl {
             position: absolute;
-            top: -40px;
+            top: -42px;
             left: 50%;
-            transform: translateX(-50%) rotate(-12deg);
-            z-index: 6;
+            transform: translateX(-50%);
+            z-index: 7;
         }
 
-        .curl-base {
-            width: 14px;
-            height: 28px;
-            background: #f0a0b8;
-            border-radius: 50% 50% 25% 25%;
-        }
-
-        .curl-tip {
-            width: 10px;
-            height: 10px;
-            background: #f0a0b8;
+        .curl-ball {
+            width: 36px;
+            height: 36px;
+            background: radial-gradient(circle at 40% 35%, #f7c0d0, #f0a0b8 60%, #e090a8);
             border-radius: 50%;
+            position: relative;
+            box-shadow: inset -3px -3px 6px rgba(0,0,0,0.08);
+        }
+
+        /* Curl highlight */
+        .curl-ball::before {
+            content: '';
             position: absolute;
-            top: -4px;
-            left: 2px;
+            width: 14px;
+            height: 10px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.35) 0%, transparent 70%);
+            top: 7px;
+            left: 8px;
+            border-radius: 50%;
+            transform: rotate(-15deg);
+        }
+
+        .curl-stem {
+            width: 14px;
+            height: 16px;
+            background: #f0a0b8;
+            border-radius: 0 0 8px 8px;
+            margin: -4px auto 0;
+            box-shadow: inset -2px 0 4px rgba(0,0,0,0.05);
         }
 
         /* ===== POKEBALL TOP HALF ===== */
         .pokeball-top {
             width: 240px;
             height: 120px;
-            background: linear-gradient(170deg, #f7c8d8 0%, #f0a0b8 45%, #e690a8 100%);
+            background: linear-gradient(175deg, #f7c0d0 0%, #f0a0b8 40%, #e898b0 100%);
             border-radius: 120px 120px 0 0;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 -3px 12px rgba(0,0,0,0.06);
+            box-shadow:
+                inset 0 15px 25px rgba(255,255,255,0.15),
+                inset 0 -3px 8px rgba(0,0,0,0.06);
         }
 
-        /* Dream Ball pink spots */
-        .dream-spot-1 {
+        /* Subtle 3D curved shine */
+        .pokeball-top::before {
+            content: '';
             position: absolute;
-            width: 85px;
-            height: 68px;
-            background: radial-gradient(ellipse, rgba(218, 125, 160, 0.55) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .dream-spot-2 {
-            position: absolute;
-            width: 48px;
-            height: 40px;
-            background: radial-gradient(ellipse, rgba(200, 100, 140, 0.35) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 30px;
+            width: 160px;
+            height: 50px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.2) 0%, transparent 70%);
+            top: 15px;
             left: 20%;
+            transform: rotate(-8deg);
         }
 
-        /* Shine highlight */
-        .pokeball-shine {
+        /* Right side shadow for roundness */
+        .pokeball-top::after {
+            content: '';
             position: absolute;
-            width: 65px;
-            height: 32px;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%);
-            top: 18px;
-            left: 28%;
-            transform: rotate(-20deg);
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.04));
+            right: 0;
+            top: 0;
         }
 
         /* ===== POKEBALL BOTTOM HALF ===== */
@@ -228,60 +234,119 @@
             position: absolute;
             width: 240px;
             height: 120px;
-            background: linear-gradient(10deg, #e2d9d3 0%, #ece4df 55%, #f2ece8 100%);
+            background: linear-gradient(5deg, #e898b0 0%, #f0a0b8 50%, #f2a8bc 100%);
             border-radius: 0 0 120px 120px;
             bottom: 0;
             left: 0;
             z-index: 2;
-            box-shadow: inset 0 3px 10px rgba(0,0,0,0.03);
+            box-shadow:
+                inset 0 -10px 20px rgba(0,0,0,0.05),
+                inset 0 5px 8px rgba(255,255,255,0.08);
+        }
+
+        /* Bottom shadow curve */
+        .pokeball-bottom::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.04));
+            right: 0;
+            top: 0;
         }
 
         /* ===== BAND ===== */
         .pokeball-band {
             position: absolute;
-            width: 240px;
-            height: 14px;
-            background: #2d1f26;
+            width: 252px;
+            height: 22px;
+            background: linear-gradient(180deg, #1a1a1e 0%, #2a2a2e 50%, #222226 100%);
             top: 50%;
-            left: 0;
+            left: -6px;
             transform: translateY(-50%);
             z-index: 5;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Band edge highlights */
+        .pokeball-band::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            top: 2px;
+        }
+
+        .pokeball-band::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.05);
+            bottom: 2px;
         }
 
         /* ===== CENTER BUTTON ===== */
         .pokeball-button {
             position: absolute;
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 30%, #fff 0%, #eee 50%, #d5d5d5 100%);
-            border: 5px solid #2d1f26;
+            background: linear-gradient(145deg, #1e1e22, #2a2a2e);
+            border: none;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
             cursor: pointer;
             transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        /* White ring */
+        .pokeball-button::before {
+            content: '';
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 35%, #ffffff, #e8e8e8 60%, #d5d5d5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 -2px 4px rgba(0,0,0,0.08);
+        }
+
+        /* Teal center */
+        .pokeball-button::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 38% 32%, #5ce0d6, #3cc8c2 40%, #28b0ac 70%, #1a9a96);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow:
+                0 0 8px rgba(60, 200, 194, 0.4),
+                inset 0 -2px 3px rgba(0,0,0,0.15);
         }
 
         .pokeball-button:hover {
             box-shadow:
-                0 0 18px rgba(244, 160, 181, 0.55),
-                0 0 40px rgba(244, 160, 181, 0.25);
-            transform: translate(-50%, -50%) scale(1.1);
+                0 0 20px rgba(60, 200, 194, 0.5),
+                0 0 40px rgba(240, 160, 184, 0.25);
+            transform: translate(-50%, -50%) scale(1.08);
         }
 
-        .pokeball-button::after {
-            content: '';
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85), rgba(210,210,210,0.4));
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1.5px solid rgba(190,190,190,0.3);
+        .pokeball-button:hover::after {
+            box-shadow:
+                0 0 14px rgba(60, 200, 194, 0.6),
+                0 0 30px rgba(60, 200, 194, 0.3),
+                inset 0 -2px 3px rgba(0,0,0,0.15);
         }
 
         /* ===== INNER GLOW ===== */
@@ -289,14 +354,14 @@
             position: absolute;
             width: 180px;
             height: 90px;
-            background: radial-gradient(ellipse at center, rgba(255, 200, 220, 0.85) 0%, rgba(244, 160, 181, 0.3) 45%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(92, 224, 214, 0.5) 0%, rgba(240, 160, 184, 0.3) 40%, transparent 70%);
             top: 25%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
             opacity: 0;
             transition: opacity 0.5s ease 0.2s;
-            filter: blur(6px);
+            filter: blur(8px);
             pointer-events: none;
         }
 
@@ -312,7 +377,7 @@
             transform: translateX(-50%);
             width: 180px;
             height: 16px;
-            background: radial-gradient(ellipse, rgba(196, 139, 159, 0.15) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(240, 160, 184, 0.12) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 0;
         }
@@ -344,9 +409,9 @@
         .ray-line {
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(255, 210, 225, 0.9), rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(to top, rgba(92, 224, 214, 0.6), rgba(255, 210, 225, 0.5), transparent);
             border-radius: 2px;
-            box-shadow: 0 0 10px rgba(244, 160, 181, 0.3);
+            box-shadow: 0 0 10px rgba(92, 224, 214, 0.2);
         }
 
         /* ===== RAY BUBBLE ===== */
@@ -384,7 +449,7 @@
         .ray-4 { transform: rotate(30deg); }
         .ray-5 { transform: rotate(60deg); }
 
-        /* Counter-rotate bubbles so text stays upright */
+        /* Counter-rotate bubbles */
         .ray-1 .ray-bubble { transform: translateX(-50%) rotate(60deg) scale(0); }
         .ray-2 .ray-bubble { transform: translateX(-50%) rotate(30deg) scale(0); }
         .ray-3 .ray-bubble { transform: translateX(-50%) rotate(0deg) scale(0); }
@@ -472,10 +537,11 @@
         .s2 { top: 12%; left: 52%; width: 3px; height: 3px; }
         .s3 { top: 18%; right: 15%; }
         .s4 { top: 32%; left: 6%; width: 5px; height: 5px; }
-        .s5 { top: 8%; right: 28%; width: 3px; height: 3px; background: #d4a373; }
+        .s5 { top: 8%; right: 28%; width: 3px; height: 3px; background: #5ce0d6; }
         .s6 { top: 28%; right: 8%; }
         .s7 { top: 15%; left: 30%; width: 3px; height: 3px; background: #e8b4c8; }
         .s8 { top: 25%; right: 35%; width: 4px; height: 4px; }
+        .s9 { top: 20%; left: 45%; width: 3px; height: 3px; background: #5ce0d6; }
 
         .pokeball-container.opened .s1 { animation-delay: 0.4s; }
         .pokeball-container.opened .s2 { animation-delay: 0.55s; }
@@ -485,6 +551,7 @@
         .pokeball-container.opened .s6 { animation-delay: 0.6s; }
         .pokeball-container.opened .s7 { animation-delay: 0.7s; }
         .pokeball-container.opened .s8 { animation-delay: 0.5s; }
+        .pokeball-container.opened .s9 { animation-delay: 0.58s; }
 
         /* ===== TEXT SECTION ===== */
         .text-section {
@@ -582,11 +649,21 @@
                 border-radius: 0 0 95px 95px;
             }
 
-            .pokeball-band { width: 190px; }
-            .pokeball-button { width: 40px; height: 40px; }
-            .ear { width: 36px; height: 40px; }
-            .ear-left { left: 22px; }
-            .ear-right { right: 22px; }
+            .pokeball-band { width: 202px; left: -6px; }
+            .pokeball-button { width: 46px; height: 46px; }
+
+            .pokeball-button::before { width: 34px; height: 34px; }
+            .pokeball-button::after { width: 18px; height: 18px; }
+
+            .ear { top: -14px; }
+            .ear-outer { width: 42px; height: 34px; }
+            .ear-inner { width: 22px; height: 18px; top: 10px; left: 10px; }
+            .ear-left { left: 18px; }
+            .ear-right { right: 18px; }
+
+            .curl-ball { width: 28px; height: 28px; }
+            .curl-stem { width: 10px; height: 12px; }
+            .hair-curl { top: -34px; }
 
             .pokeball-container.opened .ray { height: 115px; }
 
@@ -611,9 +688,9 @@
     <!-- ====== NAME ====== -->
     <h1 class="site-name">Elizabeth Orr</h1>
 
-    <!-- ====== POKEBALL SECTION ====== -->
+    <!-- ====== POKEBALL ====== -->
     <div class="pokeball-section">
-        <p class="click-hint" id="hint">click the button to open</p>
+        <p class="click-hint">click to open</p>
 
         <div class="pokeball-container" id="pokeball">
 
@@ -626,8 +703,8 @@
             <div class="sparkle s6"></div>
             <div class="sparkle s7"></div>
             <div class="sparkle s8"></div>
+            <div class="sparkle s9"></div>
 
-            <!-- Pokeball Wrapper -->
             <div class="pokeball-wrapper">
 
                 <!-- Rays -->
@@ -654,7 +731,7 @@
                     </div>
                 </div>
 
-                <!-- TOP GROUP: lid + ears + curl -->
+                <!-- TOP: lid + ears + curl -->
                 <div class="top-group">
                     <div class="ear ear-left">
                         <div class="ear-outer"></div>
@@ -665,14 +742,10 @@
                         <div class="ear-inner"></div>
                     </div>
                     <div class="hair-curl">
-                        <div class="curl-base"></div>
-                        <div class="curl-tip"></div>
+                        <div class="curl-ball"></div>
+                        <div class="curl-stem"></div>
                     </div>
-                    <div class="pokeball-top">
-                        <div class="dream-spot-1"></div>
-                        <div class="dream-spot-2"></div>
-                        <div class="pokeball-shine"></div>
-                    </div>
+                    <div class="pokeball-top"></div>
                 </div>
 
                 <!-- Band -->
@@ -721,7 +794,6 @@
         </a>
     </div>
 
-    <!-- ====== SCRIPT ====== -->
     <script>
         document.getElementById('pokebutton').addEventListener('click', function () {
             document.getElementById('pokeball').classList.toggle('opened');
