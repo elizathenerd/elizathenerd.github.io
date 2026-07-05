@@ -20,7 +20,7 @@
             color: #e8d8e0;
         }
 
-        /* ===== NAME — BIG & PROMINENT ===== */
+        /* ===== NAME ===== */
         .site-name {
             font-family: 'Playfair Display', serif;
             font-size: 3.2rem;
@@ -35,23 +35,12 @@
                 0 0 60px rgba(240, 100, 160, 0.1);
         }
 
-        .site-subtitle {
-            font-family: 'Raleway', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: rgba(230, 170, 200, 0.5);
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-top: 5px;
-            text-align: center;
-        }
-
         /* ===== POKEBALL SECTION ===== */
         .pokeball-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5px 0 0;
+            padding: 10px 0 0;
         }
 
         .click-hint {
@@ -115,7 +104,6 @@
             transition: all 0.6s ease;
         }
 
-        /* BIG GLOW when opened */
         .pokeball-container.opened .pokeball-wrapper::before {
             width: 600px;
             height: 600px;
@@ -155,7 +143,7 @@
             transform: rotate(-10deg);
         }
 
-        .ear-left .ear-outer {
+        .ear-left .ear-shape {
             width: 55px;
             height: 130px;
             background: linear-gradient(175deg, #f7a8c8 0%, #f090b5 40%, #e880a8 70%, #e270a0 100%);
@@ -167,7 +155,7 @@
                 3px 6px 14px rgba(0,0,0,0.2);
         }
 
-        .ear-left .ear-outer::before {
+        .ear-left .ear-shape::before {
             content: '';
             position: absolute;
             width: 16px;
@@ -179,7 +167,7 @@
             transform: rotate(-5deg);
         }
 
-        .ear-left .ear-inner {
+        .ear-left .ear-shape-inner {
             position: absolute;
             width: 30px;
             height: 78px;
@@ -191,7 +179,7 @@
             box-shadow: inset 0 3px 8px rgba(0,0,0,0.35);
         }
 
-        .ear-left .ear-inner::before {
+        .ear-left .ear-shape-inner::before {
             content: '';
             position: absolute;
             width: 9px;
@@ -202,18 +190,18 @@
             border-radius: 50%;
         }
 
-        /* RIGHT EAR — bent/floppy */
+        /* RIGHT EAR — single bent shape */
         .ear-right {
             right: 28px;
-            top: -80px;
-            transform: rotate(18deg);
+            top: -85px;
+            transform: rotate(12deg);
         }
 
-        .ear-right .ear-outer {
+        .ear-right .ear-shape {
             width: 55px;
             height: 130px;
             background: linear-gradient(170deg, #f7a8c8 0%, #f090b5 40%, #e880a8 70%, #e270a0 100%);
-            border-radius: 50% 50% 42% 42% / 58% 58% 42% 42%;
+            border-radius: 75% 35% 42% 42% / 58% 48% 42% 42%;
             position: relative;
             box-shadow:
                 inset 4px 0 10px rgba(255,255,255,0.12),
@@ -221,66 +209,57 @@
                 3px 6px 14px rgba(0,0,0,0.2);
         }
 
-        .ear-right .ear-outer::before {
+        .ear-right .ear-shape::before {
             content: '';
             position: absolute;
             width: 16px;
-            height: 55px;
+            height: 50px;
             background: radial-gradient(ellipse, rgba(255,255,255,0.18) 0%, transparent 70%);
-            top: 15px;
+            top: 18px;
             left: 10px;
             border-radius: 50%;
         }
 
-        .ear-right .ear-inner {
+        /* Bent tip — continuous extension using pseudo element */
+        .ear-right .ear-shape::after {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 42px;
+            background: linear-gradient(150deg, #f7a8c8 0%, #f090b5 50%, #e880a8 100%);
+            top: -8px;
+            left: -6px;
+            border-radius: 80% 30% 50% 60% / 70% 40% 60% 50%;
+            transform: rotate(-25deg);
+            box-shadow:
+                inset 3px 2px 8px rgba(255,255,255,0.12),
+                inset -2px 0 5px rgba(0,0,0,0.05);
+            z-index: -1;
+        }
+
+        .ear-right .ear-shape-inner {
             position: absolute;
             width: 30px;
             height: 78px;
             background: linear-gradient(180deg, #3a2a32 0%, #2a2a2e 40%, #222 100%);
-            border-radius: 50% 50% 45% 45% / 58% 58% 42% 42%;
+            border-radius: 65% 40% 45% 45% / 55% 50% 42% 42%;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             box-shadow: inset 0 3px 8px rgba(0,0,0,0.35);
         }
 
-        .ear-right .ear-inner::before {
+        /* Bent inner dark part follows the curve */
+        .ear-right .ear-shape-inner::before {
             content: '';
             position: absolute;
-            width: 9px;
-            height: 24px;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%);
-            top: 12px;
-            left: 6px;
-            border-radius: 50%;
-        }
-
-        /* Bent tip on right ear */
-        .ear-tip-bent {
-            position: absolute;
-            top: -22px;
-            right: -14px;
-            width: 38px;
-            height: 50px;
-            background: linear-gradient(140deg, #f7a8c8 0%, #f090b5 60%, #e880a8 100%);
-            border-radius: 50% 50% 30% 50% / 55% 55% 45% 45%;
-            transform: rotate(55deg);
-            box-shadow:
-                inset 3px 0 8px rgba(255,255,255,0.12),
-                inset -2px 0 5px rgba(0,0,0,0.06),
-                2px 4px 10px rgba(0,0,0,0.18);
-            z-index: 6;
-        }
-
-        .ear-tip-bent::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 28px;
-            background: linear-gradient(160deg, #3a2a32 0%, #2a2a2e 50%, #222 100%);
-            border-radius: 50% 50% 35% 50% / 55% 55% 45% 45%;
-            top: 10px;
-            left: 10px;
+            width: 16px;
+            height: 22px;
+            background: linear-gradient(150deg, #3a2a32 0%, #2a2a2e 60%, #282828 100%);
+            top: -6px;
+            left: -5px;
+            border-radius: 70% 30% 50% 60% / 65% 40% 60% 50%;
+            transform: rotate(-25deg);
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
         }
 
@@ -402,7 +381,7 @@
             bottom: 1px;
         }
 
-        /* ===== CENTER BUTTON — LARGER ===== */
+        /* ===== CENTER BUTTON — LARGE ===== */
         .pokeball-button {
             position: absolute;
             width: 80px;
@@ -421,7 +400,6 @@
                 0 0 0 3px rgba(50,50,54,0.5);
         }
 
-        /* White ring */
         .pokeball-button::before {
             content: '';
             position: absolute;
@@ -438,7 +416,6 @@
                 0 2px 4px rgba(0,0,0,0.15);
         }
 
-        /* Teal center */
         .pokeball-button::after {
             content: '';
             position: absolute;
@@ -472,7 +449,7 @@
                 inset 0 2px 4px rgba(255,255,255,0.2);
         }
 
-        /* ===== INNER GLOW — MUCH BIGGER ===== */
+        /* ===== INNER GLOW ===== */
         .pokeball-glow {
             position: absolute;
             width: 260px;
@@ -496,7 +473,7 @@
             opacity: 1;
         }
 
-        /* Extra burst glow when opened */
+        /* Open burst */
         .open-burst {
             position: absolute;
             width: 350px;
@@ -521,31 +498,79 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* ===== SHADOW ===== */
+        /* ===== SHADOW — MUCH BIGGER GLOW ===== */
         .pokeball-shadow {
             position: absolute;
-            bottom: 55px;
+            bottom: 50px;
             left: 50%;
             transform: translateX(-50%);
-            width: 230px;
-            height: 22px;
-            background: radial-gradient(ellipse, rgba(0,0,0,0.3) 0%, rgba(240, 100, 160, 0.06) 40%, transparent 70%);
+            width: 300px;
+            height: 30px;
+            background: radial-gradient(ellipse,
+                rgba(240, 100, 160, 0.35) 0%,
+                rgba(240, 100, 160, 0.15) 35%,
+                rgba(92, 224, 214, 0.08) 55%,
+                transparent 75%);
             border-radius: 50%;
             z-index: 0;
+            filter: blur(4px);
+            transition: all 0.5s ease;
+        }
+
+        /* Shadow glows more when opened */
+        .pokeball-container.opened .pokeball-shadow {
+            width: 380px;
+            height: 40px;
+            background: radial-gradient(ellipse,
+                rgba(92, 224, 214, 0.4) 0%,
+                rgba(255, 60, 150, 0.25) 30%,
+                rgba(240, 100, 160, 0.12) 50%,
+                transparent 75%);
+            filter: blur(6px);
+        }
+
+        /* ===== FLOOR GLOW ===== */
+        .floor-glow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 60px;
+            background: radial-gradient(ellipse,
+                rgba(240, 100, 160, 0.12) 0%,
+                rgba(240, 100, 160, 0.05) 40%,
+                transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(10px);
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .pokeball-container.opened .floor-glow {
+            width: 500px;
+            height: 80px;
+            background: radial-gradient(ellipse,
+                rgba(92, 224, 214, 0.18) 0%,
+                rgba(255, 60, 150, 0.1) 30%,
+                rgba(240, 100, 160, 0.04) 55%,
+                transparent 75%);
         }
 
         /* ===== REFLECTION ===== */
         .pokeball-reflection {
             position: absolute;
-            bottom: 38px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%) scaleY(-1);
-            width: 280px;
-            height: 70px;
+            width: 260px;
+            height: 80px;
             background: linear-gradient(to bottom,
-                rgba(240, 100, 160, 0.05) 0%,
+                rgba(240, 100, 160, 0.08) 0%,
+                rgba(240, 100, 160, 0.03) 30%,
                 transparent 100%);
-            border-radius: 0 0 140px 140px;
+            border-radius: 0 0 130px 130px;
             filter: blur(5px);
             z-index: 0;
             pointer-events: none;
@@ -588,7 +613,7 @@
                 0 0 6px rgba(255, 100, 180, 0.2);
         }
 
-        /* ===== RAY BUBBLES — VIBRANT HOT PINK ===== */
+        /* ===== RAY BUBBLES — VIBRANT ===== */
         .ray-bubble {
             position: absolute;
             top: -52px;
@@ -637,7 +662,6 @@
         .ray-4 .ray-bubble { transform: translateX(-50%) rotate(-30deg) scale(0); }
         .ray-5 .ray-bubble { transform: translateX(-50%) rotate(-60deg) scale(0); }
 
-        /* ===== OPENED — RAYS ===== */
         .pokeball-container.opened .ray {
             opacity: 1;
             height: 180px;
@@ -670,7 +694,6 @@
             transition-delay: 0.8s;
         }
 
-        /* ===== BUBBLE HOVER — EVEN BRIGHTER ===== */
         .pokeball-container.opened .ray-1 .ray-bubble:hover {
             transform: translateX(-50%) rotate(60deg) scale(1.2);
             box-shadow: 0 0 40px rgba(255, 60, 150, 0.8), 0 0 80px rgba(255, 60, 150, 0.3), 0 6px 20px rgba(0,0,0,0.25);
@@ -763,13 +786,13 @@
 
         .text-section p {
             margin-top: 15px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 300;
-            color: rgba(230, 210, 220, 0.5);
-            line-height: 1.85;
+            color: rgba(240, 225, 235, 0.75);
+            line-height: 1.9;
         }
 
-        /* ===== SOCIAL ICONS — TEAL TO POP ===== */
+        /* ===== SOCIAL ICONS ===== */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -809,11 +832,6 @@
                 margin-top: 20px;
             }
 
-            .site-subtitle {
-                font-size: 0.7rem;
-                letter-spacing: 5px;
-            }
-
             .pokeball-container {
                 width: 360px;
                 height: 520px;
@@ -846,12 +864,10 @@
             .pokeball-button::before { width: 46px; height: 46px; }
             .pokeball-button::after { width: 26px; height: 26px; }
 
-            .ear-left { left: 28px; top: -75px; }
-            .ear-right { right: 20px; top: -58px; }
-            .ear-left .ear-outer, .ear-right .ear-outer { width: 42px; height: 95px; }
-            .ear-left .ear-inner, .ear-right .ear-inner { width: 24px; height: 58px; top: 16px; }
-            .ear-tip-bent { width: 30px; height: 38px; top: -16px; right: -10px; }
-            .ear-tip-bent::before { width: 14px; height: 22px; top: 8px; left: 8px; }
+            .ear-left { left: 28px; top: -78px; }
+            .ear-right { right: 20px; top: -62px; }
+            .ear-left .ear-shape, .ear-right .ear-shape { width: 42px; height: 95px; }
+            .ear-left .ear-shape-inner, .ear-right .ear-shape-inner { width: 24px; height: 58px; top: 16px; }
 
             .pokeball-container.opened .ray { height: 130px; }
             .pokeball-container.opened .top-group { transform: translateY(-78px) rotateZ(-8deg); }
@@ -864,16 +880,16 @@
             }
 
             .text-section h2 { font-size: 1.7rem; letter-spacing: 4px; }
-            .text-section p { font-size: 0.82rem; }
+            .text-section p { font-size: 0.85rem; }
             .pokeball-reflection { display: none; }
+            .floor-glow { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAME — BIG -->
+    <!-- NAME -->
     <h1 class="site-name">Elizabeth Orr</h1>
-    <p class="site-subtitle">Controls Engineer</p>
 
     <!-- POKEBALL -->
     <div class="pokeball-section">
@@ -894,7 +910,7 @@
             <div class="sparkle s10"></div>
             <div class="sparkle s11"></div>
 
-            <!-- Open burst glow -->
+            <!-- Open burst -->
             <div class="open-burst"></div>
 
             <div class="pokeball-wrapper">
@@ -923,18 +939,17 @@
                     </div>
                 </div>
 
-                <!-- TOP: lid + bunny ears -->
+                <!-- TOP: lid + ears -->
                 <div class="top-group">
                     <!-- Left ear — straight -->
                     <div class="ear ear-left">
-                        <div class="ear-outer"></div>
-                        <div class="ear-inner"></div>
+                        <div class="ear-shape"></div>
+                        <div class="ear-shape-inner"></div>
                     </div>
-                    <!-- Right ear — bent -->
+                    <!-- Right ear — bent (single shape) -->
                     <div class="ear ear-right">
-                        <div class="ear-tip-bent"></div>
-                        <div class="ear-outer"></div>
-                        <div class="ear-inner"></div>
+                        <div class="ear-shape"></div>
+                        <div class="ear-shape-inner"></div>
                     </div>
                     <div class="pokeball-top"></div>
                 </div>
@@ -953,8 +968,9 @@
 
             </div>
 
-            <!-- Shadow & Reflection -->
+            <!-- Shadow, Glow, Reflection -->
             <div class="pokeball-shadow"></div>
+            <div class="floor-glow"></div>
             <div class="pokeball-reflection"></div>
 
         </div>
@@ -970,7 +986,7 @@
         </p>
     </div>
 
-    <!-- SOCIAL ICONS — TEAL -->
+    <!-- SOCIAL ICONS -->
     <div class="social-icons">
         <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
