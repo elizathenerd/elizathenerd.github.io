@@ -11,13 +11,13 @@
 
         body {
             font-family: 'Raleway', sans-serif;
-            background: #2a0020;
-            color: #f0d8e8;
+            background: #08041a;
+            color: #d8d0f0;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* ===== HOT PINK BG ===== */
+        /* ===== DARK PURPLE BG ===== */
         .bg-layer {
             position: fixed;
             top: 0; left: 0;
@@ -25,13 +25,14 @@
             z-index: 0;
             pointer-events: none;
             background:
-                radial-gradient(ellipse at 0% 50%, rgba(200, 20, 100, 0.25) 0%, transparent 50%),
-                radial-gradient(ellipse at 100% 30%, rgba(180, 10, 80, 0.2) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 100%, rgba(120, 0, 60, 0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 0%, rgba(220, 50, 120, 0.15) 0%, transparent 40%);
+                radial-gradient(ellipse at 0% 60%, rgba(120, 0, 200, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 20%, rgba(80, 0, 160, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 100%, rgba(60, 0, 120, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 0%, rgba(140, 20, 220, 0.08) 0%, transparent 40%),
+                radial-gradient(ellipse at 30% 40%, rgba(180, 0, 255, 0.04) 0%, transparent 35%);
         }
 
-        /* Animated grid */
+        /* Grid */
         .bg-grid {
             position: fixed;
             top: 0; left: 0;
@@ -39,8 +40,8 @@
             z-index: 0;
             pointer-events: none;
             background-image:
-                linear-gradient(rgba(255, 100, 170, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 100, 170, 0.04) 1px, transparent 1px);
+                linear-gradient(rgba(140, 0, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(140, 0, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 10s linear infinite;
         }
@@ -61,30 +62,38 @@
 
         .orb-1 {
             width: 500px; height: 500px;
-            background: rgba(255, 30, 120, 0.12);
+            background: rgba(150, 0, 255, 0.1);
             top: -15%; left: -10%;
             animation: orbFloat1 14s ease-in-out infinite;
         }
 
         .orb-2 {
             width: 400px; height: 400px;
-            background: rgba(255, 80, 160, 0.1);
+            background: rgba(180, 0, 255, 0.08);
             bottom: -10%; right: -8%;
             animation: orbFloat2 16s ease-in-out infinite;
         }
 
         .orb-3 {
             width: 300px; height: 300px;
-            background: rgba(200, 0, 100, 0.08);
+            background: rgba(200, 50, 255, 0.06);
             top: 35%; left: 40%;
             animation: orbFloat1 20s ease-in-out infinite reverse;
         }
 
         .orb-4 {
             width: 250px; height: 250px;
-            background: rgba(255, 60, 150, 0.06);
+            background: rgba(120, 0, 200, 0.05);
             top: 10%; right: 20%;
             animation: orbFloat2 12s ease-in-out infinite;
+        }
+
+        /* Neon magenta accent orb */
+        .orb-5 {
+            width: 350px; height: 350px;
+            background: rgba(220, 0, 180, 0.06);
+            bottom: 20%; left: 10%;
+            animation: orbFloat1 18s ease-in-out infinite;
         }
 
         @keyframes orbFloat1 {
@@ -97,14 +106,14 @@
             50% { transform: translate(-35px, -45px); }
         }
 
-        /* Noise texture overlay */
+        /* Noise */
         .noise {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
+            opacity: 0.025;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
@@ -117,27 +126,27 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 200;
-            background: rgba(42, 0, 32, 0.88);
+            background: rgba(8, 4, 26, 0.88);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 60, 150, 0.1);
+            border-bottom: 1px solid rgba(160, 0, 255, 0.08);
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #ff6eb4;
+            color: #c840ff;
             letter-spacing: 3px;
             text-decoration: none;
             padding: 5px 14px;
-            border: 1px solid rgba(255, 110, 180, 0.35);
+            border: 1px solid rgba(200, 64, 255, 0.35);
             transition: all 0.3s;
-            text-shadow: 0 0 10px rgba(255, 110, 180, 0.4);
+            text-shadow: 0 0 10px rgba(200, 64, 255, 0.4);
         }
 
         .logo:hover {
-            border-color: #ff6eb4;
-            box-shadow: 0 0 20px rgba(255, 110, 180, 0.25);
+            border-color: #c840ff;
+            box-shadow: 0 0 20px rgba(200, 64, 255, 0.25);
         }
 
         .nav-links {
@@ -148,7 +157,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: rgba(240, 200, 220, 0.5);
+            color: rgba(200, 180, 230, 0.5);
             font-family: 'Orbitron', sans-serif;
             font-size: 0.6rem;
             font-weight: 500;
@@ -163,14 +172,14 @@
             position: absolute;
             bottom: -4px; left: 0;
             width: 0; height: 2px;
-            background: #ff3d9a;
+            background: linear-gradient(90deg, #c840ff, #ff40d0);
             transition: width 0.3s;
-            box-shadow: 0 0 8px rgba(255, 60, 150, 0.5);
+            box-shadow: 0 0 8px rgba(200, 64, 255, 0.5);
         }
 
         .nav-links a:hover { color: #fff; }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: #ff6eb4; text-shadow: 0 0 10px rgba(255, 110, 180, 0.4); }
+        .nav-links a.active { color: #c840ff; text-shadow: 0 0 10px rgba(200, 64, 255, 0.4); }
         .nav-links a.active::after { width: 100%; }
 
         /* ===== SPLIT LAYOUT ===== */
@@ -183,20 +192,20 @@
             z-index: 1;
         }
 
-        /* ===== CENTER NEON ===== */
+        /* Center neon */
         .center-neon {
             position: absolute;
             left: 50%; top: 10%; bottom: 10%;
             width: 1px;
             background: linear-gradient(180deg,
                 transparent,
-                rgba(255, 60, 150, 0.3) 20%,
-                rgba(255, 110, 180, 0.4) 50%,
-                rgba(255, 60, 150, 0.3) 80%,
+                rgba(200, 64, 255, 0.2) 20%,
+                rgba(180, 0, 255, 0.35) 50%,
+                rgba(200, 64, 255, 0.2) 80%,
                 transparent);
             z-index: 2;
             pointer-events: none;
-            box-shadow: 0 0 15px rgba(255, 60, 150, 0.2);
+            box-shadow: 0 0 20px rgba(180, 0, 255, 0.15);
         }
 
         .center-neon::before {
@@ -205,14 +214,14 @@
             top: 48%; left: -5px;
             width: 11px; height: 11px;
             border-radius: 50%;
-            background: #ff3d9a;
-            box-shadow: 0 0 15px rgba(255, 60, 150, 0.7), 0 0 30px rgba(255, 60, 150, 0.3);
+            background: #b000ff;
+            box-shadow: 0 0 15px rgba(176, 0, 255, 0.7), 0 0 35px rgba(176, 0, 255, 0.3);
             animation: dotGlow 2.5s ease-in-out infinite;
         }
 
         @keyframes dotGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(255, 60, 150, 0.7); }
-            50% { box-shadow: 0 0 25px rgba(255, 60, 150, 1), 0 0 45px rgba(255, 60, 150, 0.4); }
+            0%, 100% { box-shadow: 0 0 15px rgba(176, 0, 255, 0.7); }
+            50% { box-shadow: 0 0 28px rgba(176, 0, 255, 1), 0 0 50px rgba(176, 0, 255, 0.4); }
         }
 
         /* ===== LEFT: QR SIDE ===== */
@@ -225,24 +234,23 @@
             position: relative;
         }
 
-        /* Left neon edge */
         .qr-side::before {
             content: '';
             position: absolute;
             left: 0; top: 12%; bottom: 12%;
             width: 2px;
-            background: linear-gradient(180deg, transparent, #ff3d9a, #ff6eb4, transparent);
-            box-shadow: 0 0 20px rgba(255, 60, 150, 0.4);
+            background: linear-gradient(180deg, transparent, #b000ff, #c840ff, transparent);
+            box-shadow: 0 0 20px rgba(176, 0, 255, 0.3);
         }
 
         .qr-label {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.55rem;
-            color: #ff6eb4;
+            color: #c840ff;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 25px;
-            text-shadow: 0 0 15px rgba(255, 110, 180, 0.5);
+            text-shadow: 0 0 15px rgba(200, 64, 255, 0.5);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -251,28 +259,28 @@
         .qr-label::before, .qr-label::after {
             content: '';
             width: 25px; height: 1px;
-            background: rgba(255, 110, 180, 0.4);
-            box-shadow: 0 0 5px rgba(255, 110, 180, 0.4);
+            background: rgba(200, 64, 255, 0.4);
+            box-shadow: 0 0 5px rgba(200, 64, 255, 0.4);
         }
 
-        /* ===== QR FRAME ===== */
+        /* QR Frame */
         .qr-frame {
             position: relative;
             padding: 28px;
             margin-bottom: 25px;
         }
 
-        /* Glow behind QR */
         .qr-frame::before {
             content: '';
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px; height: 320px;
+            width: 340px; height: 340px;
             background: radial-gradient(circle,
-                rgba(255, 60, 150, 0.15) 0%,
-                rgba(255, 110, 180, 0.06) 40%,
-                transparent 65%);
+                rgba(176, 0, 255, 0.18) 0%,
+                rgba(200, 64, 255, 0.08) 35%,
+                rgba(140, 0, 220, 0.03) 55%,
+                transparent 70%);
             border-radius: 50%;
             z-index: -1;
             animation: qrPulse 4s ease-in-out infinite;
@@ -283,7 +291,6 @@
             50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
         }
 
-        /* Neon corners */
         .qr-corner {
             position: absolute;
             width: 28px; height: 28px;
@@ -291,30 +298,30 @@
 
         .qr-corner.tl {
             top: 0; left: 0;
-            border-top: 3px solid #ff3d9a;
-            border-left: 3px solid #ff3d9a;
-            box-shadow: -3px -3px 12px rgba(255, 60, 150, 0.4);
+            border-top: 3px solid #b000ff;
+            border-left: 3px solid #b000ff;
+            box-shadow: -3px -3px 14px rgba(176, 0, 255, 0.5);
         }
 
         .qr-corner.tr {
             top: 0; right: 0;
-            border-top: 3px solid #ff6eb4;
-            border-right: 3px solid #ff6eb4;
-            box-shadow: 3px -3px 12px rgba(255, 110, 180, 0.4);
+            border-top: 3px solid #d050ff;
+            border-right: 3px solid #d050ff;
+            box-shadow: 3px -3px 14px rgba(208, 80, 255, 0.5);
         }
 
         .qr-corner.bl {
             bottom: 0; left: 0;
-            border-bottom: 3px solid #ff6eb4;
-            border-left: 3px solid #ff6eb4;
-            box-shadow: -3px 3px 12px rgba(255, 110, 180, 0.4);
+            border-bottom: 3px solid #ff40d0;
+            border-left: 3px solid #ff40d0;
+            box-shadow: -3px 3px 14px rgba(255, 64, 208, 0.5);
         }
 
         .qr-corner.br {
             bottom: 0; right: 0;
-            border-bottom: 3px solid #ff3d9a;
-            border-right: 3px solid #ff3d9a;
-            box-shadow: 3px 3px 12px rgba(255, 60, 150, 0.4);
+            border-bottom: 3px solid #b000ff;
+            border-right: 3px solid #b000ff;
+            box-shadow: 3px 3px 14px rgba(176, 0, 255, 0.5);
         }
 
         #qrcode {
@@ -322,15 +329,14 @@
             padding: 20px;
             border-radius: 16px;
             box-shadow:
-                0 0 40px rgba(255, 60, 150, 0.2),
-                0 0 80px rgba(255, 60, 150, 0.08),
+                0 0 50px rgba(176, 0, 255, 0.25),
+                0 0 100px rgba(176, 0, 255, 0.08),
                 0 10px 40px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Scan beam */
         .scan-beam {
             position: absolute;
             width: calc(100% - 16px);
@@ -338,13 +344,14 @@
             left: 8px; top: 28px;
             background: linear-gradient(90deg,
                 transparent,
-                rgba(255, 60, 150, 0.6) 30%,
-                rgba(255, 110, 180, 0.8) 50%,
-                rgba(255, 60, 150, 0.6) 70%,
+                rgba(176, 0, 255, 0.5) 20%,
+                rgba(200, 64, 255, 0.8) 40%,
+                rgba(255, 64, 208, 0.6) 60%,
+                rgba(200, 64, 255, 0.8) 80%,
                 transparent);
             animation: scanBeam 3.5s ease-in-out infinite;
             pointer-events: none;
-            box-shadow: 0 0 12px rgba(255, 60, 150, 0.5);
+            box-shadow: 0 0 12px rgba(176, 0, 255, 0.5);
         }
 
         @keyframes scanBeam {
@@ -354,25 +361,24 @@
             100% { top: calc(100% - 28px); opacity: 0; }
         }
 
-        /* Camera hint */
         .camera-hint {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 8px 18px;
-            background: rgba(255, 60, 150, 0.06);
-            border: 1px solid rgba(255, 60, 150, 0.12);
+            background: rgba(176, 0, 255, 0.05);
+            border: 1px solid rgba(176, 0, 255, 0.1);
             border-radius: 50px;
             margin-bottom: 20px;
         }
 
-        .camera-hint i { color: #ff6eb4; font-size: 0.7rem; }
+        .camera-hint i { color: #c840ff; font-size: 0.7rem; }
         .camera-hint span {
             font-size: 0.65rem;
-            color: rgba(240, 200, 220, 0.5);
+            color: rgba(200, 180, 230, 0.45);
         }
 
-        /* ===== BUTTONS ROW ===== */
+        /* Buttons */
         .btn-row {
             display: flex;
             gap: 12px;
@@ -386,10 +392,10 @@
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
-            border: 1px solid rgba(255, 110, 180, 0.25);
+            border: 1px solid rgba(200, 64, 255, 0.2);
             border-radius: 50px;
-            background: rgba(255, 60, 150, 0.06);
-            color: #ff6eb4;
+            background: rgba(176, 0, 255, 0.05);
+            color: #c840ff;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.55rem;
             font-weight: 600;
@@ -398,20 +404,20 @@
             cursor: pointer;
             transition: all 0.4s;
             text-decoration: none;
-            text-shadow: 0 0 8px rgba(255, 110, 180, 0.2);
+            text-shadow: 0 0 8px rgba(200, 64, 255, 0.2);
         }
 
         .action-btn:hover {
-            background: linear-gradient(135deg, rgba(255, 60, 150, 0.2), rgba(255, 110, 180, 0.12));
-            border-color: #ff6eb4;
+            background: linear-gradient(135deg, rgba(176, 0, 255, 0.15), rgba(255, 64, 208, 0.08));
+            border-color: #c840ff;
             color: #fff;
-            box-shadow: 0 0 20px rgba(255, 60, 150, 0.2), 0 0 40px rgba(255, 60, 150, 0.06);
+            box-shadow: 0 0 20px rgba(176, 0, 255, 0.2), 0 0 40px rgba(176, 0, 255, 0.06);
             transform: translateY(-2px);
         }
 
         .action-btn i { font-size: 0.7rem; }
 
-        /* ===== SOCIAL ROW (on QR side) ===== */
+        /* Social */
         .social-row {
             display: flex;
             gap: 10px;
@@ -423,20 +429,20 @@
             justify-content: center;
             width: 42px; height: 42px;
             border-radius: 50%;
-            border: 1px solid rgba(255, 110, 180, 0.15);
-            color: rgba(255, 110, 180, 0.5);
+            border: 1px solid rgba(176, 0, 255, 0.15);
+            color: rgba(200, 64, 255, 0.5);
             font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s;
-            background: rgba(255, 60, 150, 0.04);
+            background: rgba(176, 0, 255, 0.03);
         }
 
         .social-row a:hover {
-            background: linear-gradient(135deg, #ff3d9a, #cc1068);
+            background: linear-gradient(135deg, #b000ff, #8000cc);
             border-color: transparent;
             color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(255, 60, 150, 0.4), 0 0 25px rgba(255, 60, 150, 0.15);
+            box-shadow: 0 6px 18px rgba(176, 0, 255, 0.4), 0 0 25px rgba(176, 0, 255, 0.15);
         }
 
         /* ===== RIGHT: INFO + FORM ===== */
@@ -448,27 +454,26 @@
             position: relative;
         }
 
-        /* Right neon edge */
         .info-side::after {
             content: '';
             position: absolute;
             right: 0; top: 15%; bottom: 15%;
             width: 2px;
-            background: linear-gradient(180deg, transparent, #ff6eb4, #ff3d9a, transparent);
-            box-shadow: 0 0 20px rgba(255, 110, 180, 0.3);
+            background: linear-gradient(180deg, transparent, #c840ff, #ff40d0, transparent);
+            box-shadow: 0 0 20px rgba(200, 64, 255, 0.3);
         }
 
-        /* ===== NAME ===== */
+        /* Name */
         .name-block { margin-bottom: 30px; }
 
         .greeting {
             font-family: 'Space Mono', monospace;
             font-size: 0.6rem;
-            color: #ff6eb4;
+            color: #c840ff;
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 8px;
-            text-shadow: 0 0 10px rgba(255, 110, 180, 0.4);
+            text-shadow: 0 0 10px rgba(200, 64, 255, 0.4);
         }
 
         .contact-name {
@@ -478,12 +483,12 @@
             color: #fff;
             line-height: 1.1;
             margin-bottom: 10px;
-            text-shadow: 0 0 30px rgba(255, 60, 150, 0.2);
+            text-shadow: 0 0 30px rgba(176, 0, 255, 0.15);
         }
 
         .contact-name span {
             font-style: italic;
-            background: linear-gradient(135deg, #ff3d9a, #ff6eb4, #ff8cc8);
+            background: linear-gradient(135deg, #c840ff, #ff40d0, #b000ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -494,33 +499,33 @@
             align-items: center;
             gap: 8px;
             padding: 5px 14px;
-            border: 1px solid rgba(255, 60, 150, 0.2);
+            border: 1px solid rgba(176, 0, 255, 0.2);
             border-radius: 50px;
-            background: rgba(255, 60, 150, 0.05);
+            background: rgba(176, 0, 255, 0.04);
         }
 
         .title-dot {
             width: 6px; height: 6px;
             border-radius: 50%;
-            background: #ff3d9a;
-            box-shadow: 0 0 8px rgba(255, 60, 150, 0.6);
+            background: #b000ff;
+            box-shadow: 0 0 8px rgba(176, 0, 255, 0.6);
             animation: dotPulse 2s ease-in-out infinite;
         }
 
         @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 8px rgba(255, 60, 150, 0.6); }
-            50% { box-shadow: 0 0 18px rgba(255, 60, 150, 0.9); }
+            0%, 100% { box-shadow: 0 0 8px rgba(176, 0, 255, 0.6); }
+            50% { box-shadow: 0 0 18px rgba(176, 0, 255, 0.9); }
         }
 
         .title-text {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.55rem;
-            color: #ff6eb4;
+            color: #c840ff;
             letter-spacing: 4px;
             text-transform: uppercase;
         }
 
-        /* ===== INFO ROWS ===== */
+        /* Info rows */
         .info-rows {
             display: flex;
             flex-direction: column;
@@ -533,40 +538,40 @@
             align-items: center;
             gap: 14px;
             padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 110, 180, 0.06);
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(176, 0, 255, 0.06);
             border-radius: 12px;
             transition: all 0.3s;
         }
 
         .info-row:hover {
-            background: rgba(255, 60, 150, 0.04);
-            border-color: rgba(255, 60, 150, 0.12);
+            background: rgba(176, 0, 255, 0.04);
+            border-color: rgba(176, 0, 255, 0.12);
             transform: translateX(5px);
         }
 
         .row-icon {
             width: 36px; height: 36px;
             border-radius: 10px;
-            background: linear-gradient(135deg, rgba(255, 60, 150, 0.12), rgba(255, 110, 180, 0.06));
+            background: linear-gradient(135deg, rgba(176, 0, 255, 0.1), rgba(255, 64, 208, 0.06));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            color: #ff6eb4;
+            color: #c840ff;
             flex-shrink: 0;
-            border: 1px solid rgba(255, 60, 150, 0.08);
+            border: 1px solid rgba(176, 0, 255, 0.08);
             transition: box-shadow 0.3s;
         }
 
         .info-row:hover .row-icon {
-            box-shadow: 0 0 15px rgba(255, 60, 150, 0.3);
+            box-shadow: 0 0 15px rgba(176, 0, 255, 0.3);
         }
 
         .row-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.5rem;
-            color: rgba(255, 110, 180, 0.45);
+            color: rgba(200, 64, 255, 0.4);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
@@ -574,18 +579,18 @@
         .row-value {
             font-size: 0.9rem;
             font-weight: 400;
-            color: rgba(240, 220, 230, 0.8);
+            color: rgba(220, 210, 240, 0.8);
         }
 
         .row-value a {
-            color: rgba(240, 220, 230, 0.8);
+            color: rgba(220, 210, 240, 0.8);
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .row-value a:hover { color: #ff6eb4; }
+        .row-value a:hover { color: #c840ff; }
 
-        /* ===== FORM ===== */
+        /* Form */
         .form-divider {
             display: flex;
             align-items: center;
@@ -595,20 +600,20 @@
 
         .form-divider-line {
             flex: 1; height: 1px;
-            background: linear-gradient(90deg, rgba(255, 60, 150, 0.12), rgba(255, 110, 180, 0.06));
+            background: linear-gradient(90deg, rgba(176, 0, 255, 0.1), rgba(255, 64, 208, 0.06));
         }
 
         .form-divider-text {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.5rem;
-            color: rgba(255, 110, 180, 0.35);
+            color: rgba(200, 64, 255, 0.3);
             letter-spacing: 4px;
             text-transform: uppercase;
         }
 
         .form-block {
-            background: rgba(255, 60, 150, 0.02);
-            border: 1px solid rgba(255, 60, 150, 0.06);
+            background: rgba(176, 0, 255, 0.02);
+            border: 1px solid rgba(176, 0, 255, 0.05);
             border-radius: 16px;
             padding: 25px;
             position: relative;
@@ -620,8 +625,8 @@
             position: absolute;
             top: 0; left: 15%; right: 15%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #ff3d9a, #ff6eb4, transparent);
-            box-shadow: 0 0 10px rgba(255, 60, 150, 0.4);
+            background: linear-gradient(90deg, transparent, #b000ff, #ff40d0, #c840ff, transparent);
+            box-shadow: 0 0 10px rgba(176, 0, 255, 0.4);
         }
 
         .form-row {
@@ -642,15 +647,15 @@
         .form-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.5rem;
-            color: rgba(255, 110, 180, 0.4);
+            color: rgba(200, 64, 255, 0.35);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .form-input,
         .form-textarea {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 60, 150, 0.08);
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(176, 0, 255, 0.08);
             border-radius: 8px;
             padding: 11px 14px;
             font-family: 'Raleway', sans-serif;
@@ -663,14 +668,14 @@
 
         .form-input::placeholder,
         .form-textarea::placeholder {
-            color: rgba(240, 200, 220, 0.15);
+            color: rgba(200, 180, 230, 0.15);
         }
 
         .form-input:focus,
         .form-textarea:focus {
-            border-color: rgba(255, 60, 150, 0.25);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 15px rgba(255, 60, 150, 0.06);
+            border-color: rgba(176, 0, 255, 0.25);
+            background: rgba(176, 0, 255, 0.04);
+            box-shadow: 0 0 15px rgba(176, 0, 255, 0.06);
         }
 
         .form-textarea {
@@ -683,7 +688,7 @@
             padding: 13px 20px;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(135deg, #ff3d9a, #cc1068);
+            background: linear-gradient(135deg, #b000ff, #8000cc, #6a00aa);
             color: #fff;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.6rem;
@@ -707,11 +712,14 @@
         }
 
         .send-btn:hover {
-            box-shadow: 0 6px 25px rgba(255, 60, 150, 0.35), 0 0 40px rgba(255, 60, 150, 0.1);
+            box-shadow:
+                0 6px 25px rgba(176, 0, 255, 0.35),
+                0 0 50px rgba(176, 0, 255, 0.1);
             transform: translateY(-2px);
+            background: linear-gradient(135deg, #c840ff, #b000ff, #8000cc);
         }
 
-        /* ===== HIDDEN BUSINESS CARD ===== */
+        /* ===== HIDDEN BIZ CARD ===== */
         .biz-card-wrapper {
             position: fixed;
             top: -9999px;
@@ -721,7 +729,7 @@
         .biz-card {
             width: 700px;
             height: 400px;
-            background: linear-gradient(135deg, #1a0015 0%, #2a0025 30%, #3a0035 60%, #2a0020 100%);
+            background: linear-gradient(135deg, #08041a 0%, #120830 30%, #1a0c40 60%, #0e0625 100%);
             display: flex;
             position: relative;
             overflow: hidden;
@@ -732,14 +740,14 @@
             position: absolute;
             top: 0; bottom: 0; left: 0;
             width: 6px;
-            background: linear-gradient(180deg, #ff3d9a, #ff6eb4, #ff3d9a);
+            background: linear-gradient(180deg, #b000ff, #ff40d0, #c840ff);
         }
 
         .biz-card .biz-glow {
             position: absolute;
             top: -50px; right: -50px;
             width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(255, 60, 150, 0.15) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(176, 0, 255, 0.15) 0%, transparent 60%);
             border-radius: 50%;
         }
 
@@ -747,7 +755,7 @@
             position: absolute;
             bottom: -30px; left: 30%;
             width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(255, 110, 180, 0.08) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(255, 64, 208, 0.06) 0%, transparent 60%);
             border-radius: 50%;
         }
 
@@ -772,13 +780,13 @@
 
         .biz-name-accent {
             font-style: italic;
-            color: #ff6eb4;
+            color: #c840ff;
         }
 
         .biz-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.6rem;
-            color: #ff6eb4;
+            color: #c840ff;
             letter-spacing: 5px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -789,12 +797,12 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            color: rgba(240, 220, 230, 0.7);
+            color: rgba(220, 210, 240, 0.7);
             font-size: 0.85rem;
         }
 
         .biz-info-row i {
-            color: #ff6eb4;
+            color: #c840ff;
             font-size: 0.75rem;
             width: 18px;
             text-align: center;
@@ -808,7 +816,7 @@
             justify-content: center;
             position: relative;
             z-index: 1;
-            border-left: 1px solid rgba(255, 60, 150, 0.1);
+            border-left: 1px solid rgba(176, 0, 255, 0.1);
         }
 
         .biz-qr {
@@ -816,13 +824,13 @@
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 12px;
-            box-shadow: 0 0 25px rgba(255, 60, 150, 0.15);
+            box-shadow: 0 0 25px rgba(176, 0, 255, 0.2);
         }
 
         .biz-scan-text {
             font-family: 'Space Mono', monospace;
             font-size: 0.5rem;
-            color: rgba(255, 110, 180, 0.4);
+            color: rgba(200, 64, 255, 0.4);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
@@ -832,8 +840,8 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             background-image:
-                linear-gradient(rgba(255, 100, 170, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 100, 170, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(176, 0, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(176, 0, 255, 0.03) 1px, transparent 1px);
             background-size: 30px 30px;
             z-index: 0;
         }
@@ -849,40 +857,39 @@
         .biz-dot {
             width: 4px; height: 4px;
             border-radius: 50%;
-            background: rgba(255, 110, 180, 0.3);
+            background: rgba(200, 64, 255, 0.3);
         }
 
-        /* ===== FOOTER ===== */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 25px;
             position: relative;
             z-index: 1;
-            border-top: 1px solid rgba(255, 60, 150, 0.06);
+            border-top: 1px solid rgba(176, 0, 255, 0.05);
         }
 
         .footer p {
             font-family: 'Space Mono', monospace;
             font-size: 0.55rem;
-            color: rgba(240, 200, 220, 0.15);
+            color: rgba(200, 180, 230, 0.15);
             letter-spacing: 3px;
         }
 
         .footer a {
-            color: rgba(255, 60, 150, 0.3);
+            color: rgba(200, 64, 255, 0.3);
             text-decoration: none;
         }
 
-        .footer a:hover { color: #ff3d9a; }
+        .footer a:hover { color: #c840ff; }
 
-        /* ===== MOBILE ===== */
+        /* Mobile */
         @media (max-width: 900px) {
             nav { padding: 14px 20px; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.5rem; letter-spacing: 2px; }
-
             .split-layout { grid-template-columns: 1fr; }
-            .qr-side { padding: 100px 30px 30px; border-bottom: 1px solid rgba(255,60,150,0.06); }
+            .qr-side { padding: 100px 30px 30px; }
             .qr-side::before { display: none; }
             .info-side { padding: 30px 30px 50px; }
             .info-side::after { display: none; }
@@ -912,6 +919,7 @@
     <div class="glow-orb orb-2"></div>
     <div class="glow-orb orb-3"></div>
     <div class="glow-orb orb-4"></div>
+    <div class="glow-orb orb-5"></div>
 
     <!-- NAV -->
     <nav>
@@ -931,10 +939,7 @@
 
         <!-- LEFT: QR + SOCIALS -->
         <div class="qr-side">
-
-            <div class="qr-label">
-                <span>Scan to Connect</span>
-            </div>
+            <div class="qr-label"><span>Scan to Connect</span></div>
 
             <div class="qr-frame">
                 <div class="qr-corner tl"></div>
@@ -952,27 +957,23 @@
 
             <div class="btn-row">
                 <a href="#" class="action-btn" id="saveBtn">
-                    <i class="fas fa-address-card"></i>
-                    Save Contact
+                    <i class="fas fa-address-card"></i> Save Contact
                 </a>
                 <a href="#" class="action-btn" id="downloadCard">
-                    <i class="fas fa-image"></i>
-                    Download Card
+                    <i class="fas fa-image"></i> Download Card
                 </a>
             </div>
 
             <div class="social-row">
-                <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/elizathenerd" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/elizathenerd" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
-
         </div>
 
         <!-- RIGHT: INFO + FORM -->
         <div class="info-side">
-
             <div class="name-block">
                 <p class="greeting">// get in touch</p>
                 <h1 class="contact-name">Elizabeth <span>Orr</span></h1>
@@ -1030,12 +1031,10 @@
                     </button>
                 </form>
             </div>
-
         </div>
-
     </div>
 
-    <!-- HIDDEN BUSINESS CARD (for PNG download) -->
+    <!-- HIDDEN BIZ CARD -->
     <div class="biz-card-wrapper">
         <div class="biz-card" id="bizCard">
             <div class="biz-accent"></div>
@@ -1076,9 +1075,6 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script>
-        // ==========================================
-        // UPDATE YOUR INFO HERE
-        // ==========================================
         const contactInfo = {
             firstName: 'Elizabeth',
             lastName: 'Orr',
@@ -1088,7 +1084,6 @@
             linkedin: 'https://linkedin.com/in/your-profile'
         };
 
-        // vCard
         const vCard =
 `BEGIN:VCARD
 VERSION:3.0
@@ -1100,27 +1095,24 @@ EMAIL:${contactInfo.email}
 URL:${contactInfo.linkedin}
 END:VCARD`;
 
-        // Main QR
         new QRCode(document.getElementById('qrcode'), {
             text: vCard,
             width: 230,
             height: 230,
-            colorDark: '#2a0020',
+            colorDark: '#120830',
             colorLight: '#ffffff',
             correctLevel: QRCode.CorrectLevel.M
         });
 
-        // Business card QR (smaller)
         new QRCode(document.getElementById('bizQrcode'), {
             text: vCard,
             width: 120,
             height: 120,
-            colorDark: '#2a0020',
+            colorDark: '#120830',
             colorLight: '#ffffff',
             correctLevel: QRCode.CorrectLevel.M
         });
 
-        // Save vCard
         document.getElementById('saveBtn').addEventListener('click', function(e) {
             e.preventDefault();
             const blob = new Blob([vCard], { type: 'text/vcard' });
@@ -1134,13 +1126,9 @@ END:VCARD`;
             URL.revokeObjectURL(url);
         });
 
-        // Download business card as PNG
         document.getElementById('downloadCard').addEventListener('click', function(e) {
             e.preventDefault();
-
             const card = document.getElementById('bizCard');
-
-            // Temporarily make visible for capture
             card.parentElement.style.position = 'absolute';
             card.parentElement.style.top = '0';
             card.parentElement.style.left = '0';
@@ -1158,8 +1146,6 @@ END:VCARD`;
                     link.download = 'Elizabeth_Orr_BusinessCard.png';
                     link.href = canvas.toDataURL('image/png');
                     link.click();
-
-                    // Hide again
                     card.parentElement.style.position = 'fixed';
                     card.parentElement.style.top = '-9999px';
                     card.parentElement.style.left = '-9999px';
