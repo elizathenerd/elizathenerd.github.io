@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Orr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:wght@300;400;600;700&family=Anton&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #faf8f5;
+            color: #3d3d3d;
+            overflow-x: hidden;
+        }
+
+        /* ============ NAV BAR ============ */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(196, 139, 159, 0.15);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #5c3d4e;
+            letter-spacing: 2px;
+            border: 2px solid #5c3d4e;
+            padding: 6px 12px;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5c3d4e;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #c48b9f;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c48b9f;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 50px 60px;
+            position: relative;
+        }
+
+        /* Decorative dots */
+        .hero::before {
+            content: '●';
+            position: absolute;
+            top: 150px;
+            right: 80px;
+            font-size: 2rem;
+            color: #c48b9f;
+            opacity: 0.6;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '●';
+            position: absolute;
+            bottom: 120px;
+            left: 60px;
+            font-size: 1.2rem;
+            color: #d4a373;
+            opacity: 0.5;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.3); }
+        }
+
+        .hello-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c48b9f;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .hello-text span {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ============ BIG NAME ============ */
+        .big-name {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(5rem, 14vw, 13rem);
+            line-height: 0.9;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            margin: 10px 0 20px;
+            position: relative;
+        }
+
+        .big-name .outline {
+            -webkit-text-stroke: 3px #5c3d4e;
+            color: transparent;
+        }
+
+        .big-name .filled {
+            color: #5c3d4e;
+        }
+
+        .big-name .accent {
+            color: #c48b9f;
+        }
+
+        .big-name .gold {
+            color: #d4a373;
+        }
+
+        /* Decorative line through name */
+        .name-line {
+            display: block;
+            position: relative;
+        }
+
+        .name-line-second {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .decorative-bar {
+            height: 8px;
+            width: 60px;
+            background: linear-gradient(90deg, #c48b9f, #d4a373);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* ============ TAGLINE ============ */
+        .tagline-section {
+            margin-top: 50px;
+            max-width: 700px;
+        }
+
+        .tagline-small {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #8a6575;
+            margin-bottom: 8px;
+        }
+
+        .tagline-small em {
+            background: linear-gradient(120deg, #fadcd9 0%, #f4e1e6 100%);
+            padding: 2px 8px;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #5c3d4e;
+        }
+
+        .tagline-big {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: #3d3d3d;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        .tagline-big .highlight {
+            font-style: italic;
+            font-weight: 900;
+            color: #c48b9f;
+        }
+
+        .tagline-description {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #8a8a8a;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 550px;
+        }
+
+        /* ============ NAV BUTTONS ============ */
+        .page-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border: 2px solid #5c3d4e;
+            background: transparent;
+            color: #5c3d4e;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5c3d4e, #7a5568);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .page-btn:hover::before {
+            left: 0;
+        }
+
+        .page-btn:hover {
+            color: #fff;
+            border-color: #5c3d4e;
+        }
+
+        .page-btn .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .page-btn:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* Accent button variant */
+        .page-btn.accent {
+            border-color: #c48b9f;
+            color: #c48b9f;
+        }
+
+        .page-btn.accent::before {
+            background: linear-gradient(135deg, #c48b9f, #d4a3b5);
+        }
+
+        .page-btn.accent:hover {
+            border-color: #c48b9f;
+            color: #fff;
+        }
+
+        /* ============ SOCIAL BAR ============ */
+        .social-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            z-index: 100;
+        }
+
+        .social-bar a {
+            text-decoration: none;
+            color: #8a6575;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            writing-mode: vertical-rl;
+            transition: color 0.3s ease;
+        }
+
+        .social-bar a:hover {
+            color: #c48b9f;
+        }
+
+        .social-bar::after {
+            content: '';
+            width: 1px;
+            height: 80px;
+            background: #c48b9f;
+        }
+
+        /* ============ DECORATIVE ELEMENTS ============ */
+        .side-text {
+            position: fixed;
+            right: 40px;
+            bottom: 0;
+            writing-mode: vertical-rl;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #ccc;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        .side-text::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 80px;
+            background: #d4a373;
+            margin-top: 15px;
+        }
+
+        /* ============ GEOMETRIC DECORATIONS ============ */
+        .geo-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid rgba(196, 139, 159, 0.15);
+            top: 20%;
+            right: 5%;
+            z-index: -1;
+        }
+
+        .geo-circle-2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 163, 115, 0.15);
+            top: 25%;
+            right: 8%;
+            z-index: -1;
+        }
+
+        .geo-square {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(196, 139, 159, 0.1);
+            transform: rotate(45deg);
+            bottom: 15%;
+            right: 15%;
+            z-index: -1;
+        }
+
+        /* ============ SCROLL INDICATOR ============ */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s ease infinite;
+        }
+
+        .scroll-hint span {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #bbb;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .scroll-hint .arrow-down {
+            font-size: 1.2rem;
+            color: #c48b9f;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ============ MOBILE ============ */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.65rem;
+                letter-spacing: 2px;
+            }
+
+            .hero {
+                padding: 100px 25px 60px;
+            }
+
+            .big-name {
+                letter-spacing: -1px;
+            }
+
+            .page-buttons {
+                flex-direction: column;
+            }
+
+            .page-btn {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .social-bar,
+            .side-text {
+                display: none;
+            }
+
+            .geo-circle,
+            .geo-circle-2,
+            .geo-square {
+                display: none;
+            }
+
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav>
+        <div class="logo">EO</div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+
+        <!-- Geometric decorations -->
+        <div class="geo-circle"></div>
+        <div class="geo-circle-2"></div>
+        <div class="geo-square"></div>
+
+        <p class="hello-text">Hello, <span>I'm</span></p>
+
+        <div class="big-name">
+            <span class="name-line">
+                <span class="filled">ELI</span><span class="accent">Z</span><span class="filled">A</span><span class="outline">BE</span><span class="gold">T</span><span class="outline">H</span>
+            </span>
+            <span class="name-line name-line-second">
+                <span class="filled">O</span><span class="accent">R</span><span class="filled">R</span><span class="decorative-bar"></span>
+            </span>
+        </div>
+
+        <div class="tagline-section">
+            <p class="tagline-small">I <em>really</em> like solving problems.</p>
+            <h2 class="tagline-big">
+                So, I'm a <span class="highlight">controls</span> engineer.
+            </h2>
+            <p class="tagline-description">
+                Building smarter systems from the ground up — chiller plants, 
+                HVAC automation, SCADA, and everything in between. I turn chaos 
+                into structure and make teams more efficient.
+            </p>
+        </div>
+
+        <!-- Page Navigation Buttons -->
+        <div class="page-buttons">
+            <a href="about.html" class="page-btn">
+                About Me <span class="arrow">→</span>
+            </a>
+            <a href="portfolio.html" class="page-btn accent">
+                Portfolio <span class="arrow">→</span>
+            </a>
+            <a href="resume.html" class="page-btn">
+                Resume <span class="arrow">→</span>
+            </a>
+            <a href="contact.html" class="page-btn accent">
+                Contact <span class="arrow">→</span>
+            </a>
+        </div>
+
+        <!-- Scroll Hint -->
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="arrow-down">↓</div>
+        </div>
+
+    </section>
+
+    <!-- ====== SIDE SOCIAL BAR ====== -->
+    <div class="social-bar">
+        <a href="https://linkedin.com/" target="_blank">LINKEDIN</a>
+        <a href="https://github.com/elizathenerd" target="_blank">GITHUB</a>
+        <a href="https://youtube.com/" target="_blank">YOUTUBE</a>
+        <a href="https://instagram.com/" target="_blank">INSTA</a>
+    </div>
+
+    <!-- ====== SIDE TEXT ====== -->
+    <div class="side-text">CONTROLS ENGINEER — 2025</div>
+
+</body>
+</html>
