@@ -5,408 +5,535 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elizabeth Orr | Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:wght@200;300;400;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Raleway:wght@300;400;600;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Raleway', sans-serif;
-            background: #faf8f5;
-            color: #3d3d3d;
-            overflow-x: hidden;
-        }
-
-        /* ============ NAV ============ */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 50px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 200;
-            background: rgba(250, 248, 245, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(196, 139, 159, 0.12);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #5c3d4e;
-            letter-spacing: 2px;
-            border: 2px solid #5c3d4e;
-            padding: 5px 10px;
-            line-height: 1;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #5c3d4e;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #c48b9f;
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover { color: #c48b9f; }
-        .nav-links a:hover::after { width: 100%; }
-
-        /* ============ HERO ============ */
-        .hero {
+            background: linear-gradient(160deg, #1e0d25 0%, #150820 40%, #0d0415 100%);
             min-height: 100vh;
-            padding: 100px 50px 40px;
-            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            align-items: center;
+            overflow-x: hidden;
+            color: #e8d8e0;
         }
 
-        /* ============ HELLO TEXT ============ */
-        .hello-line {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            text-transform: uppercase;
-            color: #2d1f26;
-            letter-spacing: 3px;
-            margin-top: 20px;
-            line-height: 1.1;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ============ MASSIVE NAME ============ */
-        .name-block {
-            position: relative;
-            margin: -5px 0 0 -8px;
-            z-index: 1;
-        }
-
-        .name-row {
-            display: flex;
-            align-items: baseline;
-            line-height: 0.85;
-        }
-
-        .letter {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: clamp(6rem, 15vw, 16rem);
-            text-transform: uppercase;
-            display: inline-block;
-            position: relative;
-            letter-spacing: -4px;
-            transition: transform 0.3s ease;
-            cursor: default;
-        }
-
-        .letter:hover {
-            transform: translateY(-6px);
-        }
-
-        /* --- Letter Styles --- */
-        .l-dark {
-            color: #2d1f26;
-        }
-
-        .l-pink-solid {
-            color: #c48b9f;
-        }
-
-        .l-pink-light {
-            color: #dba8b8;
-        }
-
-        .l-outline-dark {
-            -webkit-text-stroke: 3px #2d1f26;
-            color: transparent;
-        }
-
-        .l-outline-pink {
-            -webkit-text-stroke: 3px #c48b9f;
-            color: transparent;
-        }
-
-        .l-gradient {
-            background: linear-gradient(180deg, #c48b9f 0%, #e8b4c8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .l-dark-shadow {
-            color: #2d1f26;
-            text-shadow: 6px 6px 0 rgba(196, 139, 159, 0.2);
-        }
-
-        .l-serif {
+        /* ===== NAME ===== */
+        .site-name {
             font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-style: italic;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: rgba(196, 139, 159, 0.8);
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-top: 35px;
+            text-align: center;
         }
 
-        /* ============ PINK ACCENTS / DECORATIONS ============ */
+        /* ===== POKEBALL SECTION ===== */
+        .pokeball-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0 0;
+        }
 
-        /* Large pink circle behind letters */
-        .pink-circle-lg {
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(196, 139, 159, 0.12) 0%, transparent 70%);
-            z-index: 0;
+        .click-hint {
+            font-size: 0.65rem;
+            color: rgba(196, 139, 159, 0.4);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            animation: hintPulse 2.5s ease-in-out infinite;
+            transition: opacity 0.5s;
+        }
+
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.7; }
+        }
+
+        .pokeball-container.opened .click-hint {
+            opacity: 0;
             pointer-events: none;
         }
 
-        .pink-circle-lg.pc1 {
-            top: 5%;
+        /* ===== POKEBALL CONTAINER ===== */
+        .pokeball-container {
+            position: relative;
+            width: 460px;
+            height: 530px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== POKEBALL WRAPPER ===== */
+        .pokeball-wrapper {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            animation: ballFloat 3.5s ease-in-out infinite;
+        }
+
+        @keyframes ballFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pokeball-container.opened .pokeball-wrapper {
+            animation: none;
+        }
+
+        /* Ambient glow */
+        .pokeball-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(196, 139, 159, 0.08) 0%, transparent 65%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        /* ===== TOP GROUP (lid + ears + curl) ===== */
+        .top-group {
+            position: absolute;
+            width: 240px;
+            height: 120px;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+        }
+
+        .pokeball-container.opened .top-group {
+            transform: translateY(-85px) rotateZ(-8deg);
+        }
+
+        /* ===== JIGGLYPUFF EARS ===== */
+        .ear {
+            position: absolute;
+            width: 44px;
+            height: 50px;
+            z-index: 5;
+            top: -28px;
+        }
+
+        .ear-left {
+            left: 30px;
+            transform: rotate(-18deg);
+        }
+
+        .ear-right {
+            right: 30px;
+            transform: rotate(18deg);
+        }
+
+        .ear-outer {
+            width: 100%;
+            height: 100%;
+            background: #f0a0b8;
+            clip-path: polygon(50% 0%, 2% 100%, 98% 100%);
+        }
+
+        .ear-inner {
+            position: absolute;
+            width: 50%;
+            height: 42%;
+            background: #2d1f26;
+            clip-path: polygon(50% 18%, 8% 100%, 92% 100%);
+            top: 32%;
             left: 25%;
         }
 
-        .pink-circle-lg.pc2 {
-            top: 30%;
-            right: 30%;
-            width: 120px;
+        /* ===== HAIR CURL ===== */
+        .hair-curl {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-12deg);
+            z-index: 6;
+        }
+
+        .curl-base {
+            width: 14px;
+            height: 28px;
+            background: #f0a0b8;
+            border-radius: 50% 50% 25% 25%;
+        }
+
+        .curl-tip {
+            width: 10px;
+            height: 10px;
+            background: #f0a0b8;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: 2px;
+        }
+
+        /* ===== POKEBALL TOP HALF ===== */
+        .pokeball-top {
+            width: 240px;
             height: 120px;
-        }
-
-        /* Small pink dots */
-        .pink-dot {
-            position: absolute;
-            border-radius: 50%;
-            background: #c48b9f;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .pd1 { width: 14px; height: 14px; top: 8%; left: 52%; opacity: 0.7; }
-        .pd2 { width: 8px; height: 8px; top: 42%; left: 65%; opacity: 0.5; }
-        .pd3 { width: 20px; height: 20px; top: 2%; right: 22%; opacity: 0.15; }
-        .pd4 { width: 6px; height: 6px; top: 55%; left: 40%; opacity: 0.6; }
-        .pd5 { width: 10px; height: 10px; top: 18%; right: 15%; opacity: 0.4; }
-        .pd6 { width: 16px; height: 16px; bottom: 58%; left: 72%; opacity: 0.2; }
-        .pd7 { width: 5px; height: 5px; top: 35%; left: 15%; opacity: 0.5; background: #d4a373; }
-
-        /* Pink diagonal slash marks */
-        .pink-slash {
-            position: absolute;
-            width: 3px;
-            height: 40px;
-            background: linear-gradient(180deg, #c48b9f, transparent);
-            transform: rotate(-30deg);
-            z-index: 3;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .ps1 { top: 5%; left: 48%; }
-        .ps2 { top: 15%; right: 18%; height: 25px; transform: rotate(-45deg); opacity: 0.2; }
-        .ps3 { top: 45%; left: 58%; height: 30px; transform: rotate(-20deg); opacity: 0.25; }
-
-        /* Pink ring outlines */
-        .pink-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid rgba(196, 139, 159, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .pr1 { width: 100px; height: 100px; top: 0; right: 10%; }
-        .pr2 { width: 60px; height: 60px; top: 40%; right: 25%; border-color: rgba(212, 163, 115, 0.1); }
-
-        /* Pink paint splash (abstract shape) */
-        .pink-splash {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            background: rgba(196, 139, 159, 0.08);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            transform: rotate(-12deg);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .pspl1 { top: 22%; left: 60%; }
-        .pspl2 { top: 50%; left: 30%; width: 60px; height: 20px; transform: rotate(8deg); }
-
-        /* Small "+" marks */
-        .plus-mark {
-            position: absolute;
-            font-size: 1rem;
-            color: rgba(196, 139, 159, 0.2);
-            font-weight: 300;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .pm1 { top: 3%; right: 30%; }
-        .pm2 { top: 48%; right: 12%; color: rgba(212, 163, 115, 0.2); }
-
-        /* Decorative bar */
-        .deco-bar {
-            display: inline-block;
-            width: 70px;
-            height: 9px;
-            background: linear-gradient(90deg, #c48b9f, #e8b4c8);
-            border-radius: 5px;
-            margin-left: 10px;
-            margin-bottom: clamp(15px, 3vw, 35px);
-        }
-
-        /* ============ TAGLINE SECTION ============ */
-        .tagline-section {
-            margin-top: 25px;
-            position: relative;
-            z-index: 10;
-            max-width: 750px;
-        }
-
-        .tagline-small {
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: #6b5060;
-            margin-bottom: 5px;
-        }
-
-        .tagline-small em {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 700;
-            color: #5c3d4e;
-            background: linear-gradient(120deg, #fadcd9, #f4e1e6);
-            padding: 2px 10px;
-            border-radius: 3px;
-        }
-
-        .tagline-big {
-            font-family: 'Raleway', sans-serif;
-            font-size: clamp(2.6rem, 6vw, 4.5rem);
-            font-weight: 900;
-            color: #2d1f26;
-            line-height: 1.1;
-            letter-spacing: -1px;
-        }
-
-        .tagline-big .highlight {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 900;
-            color: #c48b9f;
-        }
-
-        .tagline-desc {
-            margin-top: 20px;
-            font-size: 0.95rem;
-            color: #999;
-            font-weight: 300;
-            line-height: 1.9;
-            max-width: 550px;
-        }
-
-        /* ============ PAGE BUTTONS ============ */
-        .page-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-            margin-top: 35px;
-        }
-
-        .page-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 18px 35px;
-            border: 2px solid #2d1f26;
-            border-right: none;
-            background: transparent;
-            color: #2d1f26;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: all 0.4s;
+            background: linear-gradient(170deg, #f7c8d8 0%, #f0a0b8 45%, #e690a8 100%);
+            border-radius: 120px 120px 0 0;
             position: relative;
             overflow: hidden;
+            box-shadow: inset 0 -3px 12px rgba(0,0,0,0.06);
         }
 
-        .page-btn:last-child {
-            border-right: 2px solid #2d1f26;
-        }
-
-        .page-btn::before {
-            content: '';
+        /* Dream Ball pink spots */
+        .dream-spot-1 {
             position: absolute;
+            width: 85px;
+            height: 68px;
+            background: radial-gradient(ellipse, rgba(218, 125, 160, 0.55) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dream-spot-2 {
+            position: absolute;
+            width: 48px;
+            height: 40px;
+            background: radial-gradient(ellipse, rgba(200, 100, 140, 0.35) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 30px;
+            left: 20%;
+        }
+
+        /* Shine highlight */
+        .pokeball-shine {
+            position: absolute;
+            width: 65px;
+            height: 32px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%);
+            top: 18px;
+            left: 28%;
+            transform: rotate(-20deg);
+        }
+
+        /* ===== POKEBALL BOTTOM HALF ===== */
+        .pokeball-bottom {
+            position: absolute;
+            width: 240px;
+            height: 120px;
+            background: linear-gradient(10deg, #e2d9d3 0%, #ece4df 55%, #f2ece8 100%);
+            border-radius: 0 0 120px 120px;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 0;
+            z-index: 2;
+            box-shadow: inset 0 3px 10px rgba(0,0,0,0.03);
+        }
+
+        /* ===== BAND ===== */
+        .pokeball-band {
+            position: absolute;
+            width: 240px;
+            height: 14px;
             background: #2d1f26;
-            transition: height 0.4s;
-            z-index: -1;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 5;
         }
 
-        .page-btn:hover::before {
+        /* ===== CENTER BUTTON ===== */
+        .pokeball-button {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #fff 0%, #eee 50%, #d5d5d5 100%);
+            border: 5px solid #2d1f26;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            cursor: pointer;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .pokeball-button:hover {
+            box-shadow:
+                0 0 18px rgba(244, 160, 181, 0.55),
+                0 0 40px rgba(244, 160, 181, 0.25);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .pokeball-button::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85), rgba(210,210,210,0.4));
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1.5px solid rgba(190,190,190,0.3);
+        }
+
+        /* ===== INNER GLOW ===== */
+        .pokeball-glow {
+            position: absolute;
+            width: 180px;
+            height: 90px;
+            background: radial-gradient(ellipse at center, rgba(255, 200, 220, 0.85) 0%, rgba(244, 160, 181, 0.3) 45%, transparent 70%);
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.5s ease 0.2s;
+            filter: blur(6px);
+            pointer-events: none;
+        }
+
+        .pokeball-container.opened .pokeball-glow {
+            opacity: 1;
+        }
+
+        /* ===== SHADOW UNDER BALL ===== */
+        .pokeball-shadow {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 16px;
+            background: radial-gradient(ellipse, rgba(196, 139, 159, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        /* ===== RAYS CONTAINER ===== */
+        .rays-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        /* ===== INDIVIDUAL RAY ===== */
+        .ray {
+            position: absolute;
+            bottom: 0;
+            left: -1.5px;
+            width: 3px;
+            height: 0;
+            transform-origin: bottom center;
+            opacity: 0;
+            transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+            will-change: height;
+        }
+
+        .ray-line {
+            width: 100%;
             height: 100%;
+            background: linear-gradient(to top, rgba(255, 210, 225, 0.9), rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(244, 160, 181, 0.3);
         }
 
-        .page-btn:hover {
+        /* ===== RAY BUBBLE ===== */
+        .ray-bubble {
+            position: absolute;
+            top: -44px;
+            left: 50%;
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            pointer-events: auto;
+            cursor: pointer;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             color: #fff;
+            line-height: 1.3;
+            background: radial-gradient(circle at 35% 30%, #f7c5d5, #d67a98);
+            box-shadow: 0 0 20px rgba(244, 160, 181, 0.45), 0 4px 12px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+            will-change: transform;
         }
 
-        .page-btn .arrow {
+        /* ===== RAY ROTATIONS ===== */
+        .ray-1 { transform: rotate(-60deg); }
+        .ray-2 { transform: rotate(-30deg); }
+        .ray-3 { transform: rotate(0deg); }
+        .ray-4 { transform: rotate(30deg); }
+        .ray-5 { transform: rotate(60deg); }
+
+        /* Counter-rotate bubbles so text stays upright */
+        .ray-1 .ray-bubble { transform: translateX(-50%) rotate(60deg) scale(0); }
+        .ray-2 .ray-bubble { transform: translateX(-50%) rotate(30deg) scale(0); }
+        .ray-3 .ray-bubble { transform: translateX(-50%) rotate(0deg) scale(0); }
+        .ray-4 .ray-bubble { transform: translateX(-50%) rotate(-30deg) scale(0); }
+        .ray-5 .ray-bubble { transform: translateX(-50%) rotate(-60deg) scale(0); }
+
+        /* ===== OPENED — RAYS GROW ===== */
+        .pokeball-container.opened .ray {
+            opacity: 1;
+            height: 155px;
+        }
+
+        .pokeball-container.opened .ray-1 { transition-delay: 0.3s; }
+        .pokeball-container.opened .ray-2 { transition-delay: 0.4s; }
+        .pokeball-container.opened .ray-3 { transition-delay: 0.35s; }
+        .pokeball-container.opened .ray-4 { transition-delay: 0.45s; }
+        .pokeball-container.opened .ray-5 { transition-delay: 0.5s; }
+
+        /* ===== OPENED — BUBBLES POP IN ===== */
+        .pokeball-container.opened .ray-1 .ray-bubble {
+            transform: translateX(-50%) rotate(60deg) scale(1);
+            transition-delay: 0.6s;
+        }
+        .pokeball-container.opened .ray-2 .ray-bubble {
+            transform: translateX(-50%) rotate(30deg) scale(1);
+            transition-delay: 0.7s;
+        }
+        .pokeball-container.opened .ray-3 .ray-bubble {
+            transform: translateX(-50%) rotate(0deg) scale(1);
+            transition-delay: 0.65s;
+        }
+        .pokeball-container.opened .ray-4 .ray-bubble {
+            transform: translateX(-50%) rotate(-30deg) scale(1);
+            transition-delay: 0.75s;
+        }
+        .pokeball-container.opened .ray-5 .ray-bubble {
+            transform: translateX(-50%) rotate(-60deg) scale(1);
+            transition-delay: 0.8s;
+        }
+
+        /* ===== BUBBLE HOVER ===== */
+        .pokeball-container.opened .ray-1 .ray-bubble:hover {
+            transform: translateX(-50%) rotate(60deg) scale(1.15);
+            box-shadow: 0 0 30px rgba(244, 160, 181, 0.7), 0 5px 18px rgba(0,0,0,0.25);
+        }
+        .pokeball-container.opened .ray-2 .ray-bubble:hover {
+            transform: translateX(-50%) rotate(30deg) scale(1.15);
+            box-shadow: 0 0 30px rgba(244, 160, 181, 0.7), 0 5px 18px rgba(0,0,0,0.25);
+        }
+        .pokeball-container.opened .ray-3 .ray-bubble:hover {
+            transform: translateX(-50%) rotate(0deg) scale(1.15);
+            box-shadow: 0 0 30px rgba(244, 160, 181, 0.7), 0 5px 18px rgba(0,0,0,0.25);
+        }
+        .pokeball-container.opened .ray-4 .ray-bubble:hover {
+            transform: translateX(-50%) rotate(-30deg) scale(1.15);
+            box-shadow: 0 0 30px rgba(244, 160, 181, 0.7), 0 5px 18px rgba(0,0,0,0.25);
+        }
+        .pokeball-container.opened .ray-5 .ray-bubble:hover {
+            transform: translateX(-50%) rotate(-60deg) scale(1.15);
+            box-shadow: 0 0 30px rgba(244, 160, 181, 0.7), 0 5px 18px rgba(0,0,0,0.25);
+        }
+
+        /* ===== SPARKLES ===== */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #f4c5d5;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .pokeball-container.opened .sparkle {
+            animation: sparkleAnim 1.2s ease forwards;
+        }
+
+        @keyframes sparkleAnim {
+            0% { opacity: 0; transform: scale(0); }
+            40% { opacity: 1; transform: scale(1.5); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        .s1 { top: 22%; left: 12%; }
+        .s2 { top: 12%; left: 52%; width: 3px; height: 3px; }
+        .s3 { top: 18%; right: 15%; }
+        .s4 { top: 32%; left: 6%; width: 5px; height: 5px; }
+        .s5 { top: 8%; right: 28%; width: 3px; height: 3px; background: #d4a373; }
+        .s6 { top: 28%; right: 8%; }
+        .s7 { top: 15%; left: 30%; width: 3px; height: 3px; background: #e8b4c8; }
+        .s8 { top: 25%; right: 35%; width: 4px; height: 4px; }
+
+        .pokeball-container.opened .s1 { animation-delay: 0.4s; }
+        .pokeball-container.opened .s2 { animation-delay: 0.55s; }
+        .pokeball-container.opened .s3 { animation-delay: 0.5s; }
+        .pokeball-container.opened .s4 { animation-delay: 0.65s; }
+        .pokeball-container.opened .s5 { animation-delay: 0.45s; }
+        .pokeball-container.opened .s6 { animation-delay: 0.6s; }
+        .pokeball-container.opened .s7 { animation-delay: 0.7s; }
+        .pokeball-container.opened .s8 { animation-delay: 0.5s; }
+
+        /* ===== TEXT SECTION ===== */
+        .text-section {
+            text-align: center;
+            padding: 10px 25px 10px;
+            max-width: 580px;
+        }
+
+        .text-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #e0d0d8;
+        }
+
+        .text-section h2 span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #c48b9f;
+            letter-spacing: 3px;
+        }
+
+        .text-section p {
+            margin-top: 15px;
             font-size: 0.9rem;
-            transition: transform 0.3s;
+            font-weight: 300;
+            color: rgba(230, 210, 220, 0.5);
+            line-height: 1.85;
         }
 
-        .page-btn:hover .arrow {
-            transform: translateX(5px);
-        }
-
-        /* ============ SOCIAL ICONS ============ */
+        /* ===== SOCIAL ICONS ===== */
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin-top: 35px;
+            justify-content: center;
+            gap: 16px;
+            padding: 25px 0 50px;
         }
 
         .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            border: 1.5px solid #d8bfc7;
-            color: #8a6575;
+            border: 1.5px solid rgba(196, 139, 159, 0.25);
+            color: rgba(196, 139, 159, 0.6);
             font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s;
@@ -417,152 +544,189 @@
             border-color: #c48b9f;
             color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(196, 139, 159, 0.35);
+            box-shadow: 0 5px 14px rgba(196, 139, 159, 0.4);
         }
 
-        /* ============ BOTTOM ACCENT LINE ============ */
-        .bottom-line {
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #c48b9f, #e8b4c8, #d4a373, #f4e1e6);
-            margin-top: auto;
-        }
-
-        /* ============ MOBILE ============ */
-        @media (max-width: 900px) {
-            nav { padding: 15px 20px; }
-            .nav-links { gap: 12px; }
-            .nav-links a { font-size: 0.6rem; letter-spacing: 2px; }
-
-            .hero { padding: 90px 20px 30px; }
-            .hello-line { font-size: 1.6rem; }
-            .letter { letter-spacing: -2px; }
-
-            .page-buttons { flex-direction: column; }
-            .page-btn { border-right: 2px solid #2d1f26; border-bottom: none; }
-            .page-btn:last-child { border-bottom: 2px solid #2d1f26; }
-
-            .pink-dot, .pink-slash, .pink-ring,
-            .pink-circle-lg, .pink-splash, .plus-mark {
-                display: none;
+        /* ===== MOBILE ===== */
+        @media (max-width: 520px) {
+            .site-name {
+                font-size: 1.2rem;
+                letter-spacing: 6px;
+                margin-top: 25px;
             }
-        }
 
-        @media (max-width: 500px) {
-            .hello-line { font-size: 1.3rem; }
-            .tagline-small { font-size: 1.1rem; }
+            .pokeball-container {
+                width: 340px;
+                height: 440px;
+            }
+
+            .pokeball-wrapper {
+                width: 190px;
+                height: 190px;
+            }
+
+            .top-group {
+                width: 190px;
+                height: 95px;
+            }
+
+            .pokeball-top {
+                width: 190px;
+                height: 95px;
+                border-radius: 95px 95px 0 0;
+            }
+
+            .pokeball-bottom {
+                width: 190px;
+                height: 95px;
+                border-radius: 0 0 95px 95px;
+            }
+
+            .pokeball-band { width: 190px; }
+            .pokeball-button { width: 40px; height: 40px; }
+            .ear { width: 36px; height: 40px; }
+            .ear-left { left: 22px; }
+            .ear-right { right: 22px; }
+
+            .pokeball-container.opened .ray { height: 115px; }
+
+            .ray-bubble {
+                width: 62px;
+                height: 62px;
+                font-size: 0.5rem;
+                top: -36px;
+            }
+
+            .text-section h2 {
+                font-size: 1.6rem;
+                letter-spacing: 4px;
+            }
+
+            .text-section p { font-size: 0.82rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== NAV ====== -->
-    <nav>
-        <div class="logo">EO</div>
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- ====== NAME ====== -->
+    <h1 class="site-name">Elizabeth Orr</h1>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero">
+    <!-- ====== POKEBALL SECTION ====== -->
+    <div class="pokeball-section">
+        <p class="click-hint" id="hint">click the button to open</p>
 
-        <!-- Pink accent decorations -->
-        <div class="pink-circle-lg pc1"></div>
-        <div class="pink-circle-lg pc2"></div>
-        <div class="pink-dot pd1"></div>
-        <div class="pink-dot pd2"></div>
-        <div class="pink-dot pd3"></div>
-        <div class="pink-dot pd4"></div>
-        <div class="pink-dot pd5"></div>
-        <div class="pink-dot pd6"></div>
-        <div class="pink-dot pd7"></div>
-        <div class="pink-slash ps1"></div>
-        <div class="pink-slash ps2"></div>
-        <div class="pink-slash ps3"></div>
-        <div class="pink-ring pr1"></div>
-        <div class="pink-ring pr2"></div>
-        <div class="pink-splash pspl1"></div>
-        <div class="pink-splash pspl2"></div>
-        <span class="plus-mark pm1">+</span>
-        <span class="plus-mark pm2">+</span>
+        <div class="pokeball-container" id="pokeball">
 
-        <!-- HELLO I'M -->
-        <div class="hello-line">HELLO, I'M</div>
+            <!-- Sparkles -->
+            <div class="sparkle s1"></div>
+            <div class="sparkle s2"></div>
+            <div class="sparkle s3"></div>
+            <div class="sparkle s4"></div>
+            <div class="sparkle s5"></div>
+            <div class="sparkle s6"></div>
+            <div class="sparkle s7"></div>
+            <div class="sparkle s8"></div>
 
-        <!-- MASSIVE NAME -->
-        <div class="name-block">
-            <div class="name-row">
-                <span class="letter l-dark">E</span>
-                <span class="letter l-dark">L</span>
-                <span class="letter l-pink-solid l-serif">I</span>
-                <span class="letter l-dark-shadow">Z</span>
-                <span class="letter l-gradient l-serif">A</span>
-                <span class="letter l-outline-dark">B</span>
-                <span class="letter l-outline-pink">E</span>
-                <span class="letter l-pink-solid l-serif">T</span>
-                <span class="letter l-outline-dark">H</span>
+            <!-- Pokeball Wrapper -->
+            <div class="pokeball-wrapper">
+
+                <!-- Rays -->
+                <div class="rays-container">
+                    <div class="ray ray-1">
+                        <div class="ray-line"></div>
+                        <a href="contact.html" class="ray-bubble">Contact</a>
+                    </div>
+                    <div class="ray ray-2">
+                        <div class="ray-line"></div>
+                        <a href="resume.html" class="ray-bubble">Resume</a>
+                    </div>
+                    <div class="ray ray-3">
+                        <div class="ray-line"></div>
+                        <a href="portfolio.html" class="ray-bubble">Portfolio</a>
+                    </div>
+                    <div class="ray ray-4">
+                        <div class="ray-line"></div>
+                        <a href="projects.html" class="ray-bubble">Projects</a>
+                    </div>
+                    <div class="ray ray-5">
+                        <div class="ray-line"></div>
+                        <a href="about.html" class="ray-bubble">About Me</a>
+                    </div>
+                </div>
+
+                <!-- TOP GROUP: lid + ears + curl -->
+                <div class="top-group">
+                    <div class="ear ear-left">
+                        <div class="ear-outer"></div>
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="ear ear-right">
+                        <div class="ear-outer"></div>
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="hair-curl">
+                        <div class="curl-base"></div>
+                        <div class="curl-tip"></div>
+                    </div>
+                    <div class="pokeball-top">
+                        <div class="dream-spot-1"></div>
+                        <div class="dream-spot-2"></div>
+                        <div class="pokeball-shine"></div>
+                    </div>
+                </div>
+
+                <!-- Band -->
+                <div class="pokeball-band"></div>
+
+                <!-- Center Button -->
+                <div class="pokeball-button" id="pokebutton"></div>
+
+                <!-- Bottom Half -->
+                <div class="pokeball-bottom"></div>
+
+                <!-- Inner Glow -->
+                <div class="pokeball-glow"></div>
+
             </div>
-            <div class="name-row">
-                <span class="letter l-dark-shadow">O</span>
-                <span class="letter l-gradient l-serif">R</span>
-                <span class="letter l-dark">R</span>
-                <span class="deco-bar"></span>
-            </div>
+
+            <!-- Shadow -->
+            <div class="pokeball-shadow"></div>
+
         </div>
+    </div>
 
-        <!-- TAGLINE -->
-        <div class="tagline-section">
-            <p class="tagline-small">I <em>really</em> love solving problems.</p>
-            <h2 class="tagline-big">
-                So, I am an <span class="highlight">Engineer.</span>
-            </h2>
-            <p class="tagline-desc">
-                My journey in this field has been driven by a curiosity
-                for chemical processes and a passion for problem-solving.
-                I create structure in an otherwise chaotic environment.
-            </p>
-        </div>
+    <!-- ====== TEXT ====== -->
+    <div class="text-section">
+        <h2>I AM AN <span>ENGINEER.</span></h2>
+        <p>
+            My journey in this field has been driven by a curiosity
+            for chemical processes and a passion for problem-solving.
+            I create structure in an otherwise chaotic environment.
+        </p>
+    </div>
 
-        <!-- PAGE BUTTONS -->
-        <div class="page-buttons">
-            <a href="about.html" class="page-btn">
-                About Me <span class="arrow">&rarr;</span>
-            </a>
-            <a href="portfolio.html" class="page-btn">
-                Portfolio <span class="arrow">&rarr;</span>
-            </a>
-            <a href="resume.html" class="page-btn">
-                Resume <span class="arrow">&rarr;</span>
-            </a>
-            <a href="contact.html" class="page-btn">
-                Contact <span class="arrow">&rarr;</span>
-            </a>
-        </div>
+    <!-- ====== SOCIAL ICONS ====== -->
+    <div class="social-icons">
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/elizathenerd" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
 
-        <!-- SOCIAL ICONS -->
-        <div class="social-icons">
-            <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/elizathenerd" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://youtube.com/" target="_blank" title="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://instagram.com/" target="_blank" title="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-
-        <!-- Bottom gradient line -->
-        <div class="bottom-line"></div>
-
-    </section>
+    <!-- ====== SCRIPT ====== -->
+    <script>
+        document.getElementById('pokebutton').addEventListener('click', function () {
+            document.getElementById('pokeball').classList.toggle('opened');
+        });
+    </script>
 
 </body>
 </html>
