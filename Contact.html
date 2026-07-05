@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Elizabeth Orr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=Raleway:wght@200;300;400;500;600;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #0d0415;
+            color: #e8d8e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(13, 4, 21, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(92, 224, 214, 0.08);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 110, 180, 0.5);
+            padding: 5px 12px;
+            line-height: 1;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            border-color: #ff6eb4;
+            box-shadow: 0 0 15px rgba(255, 110, 180, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(230, 210, 220, 0.6);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6eb4, #45d4ce);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: #ff6eb4; }
+        .nav-links a.active::after { width: 100%; }
+
+        /* ===== BG GRID ===== */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .grid-line-h, .grid-line-v {
+            position: absolute;
+            background: rgba(92, 224, 214, 0.03);
+        }
+
+        .grid-line-h { width: 100%; height: 1px; }
+        .grid-line-v { height: 100%; width: 1px; }
+
+        /* ===== MAIN ===== */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 30px 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== CARD ===== */
+        .contact-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(92, 224, 214, 0.08);
+            border-radius: 28px;
+            padding: 55px 50px;
+            max-width: 460px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Corner accents */
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 70px;
+            height: 70px;
+            border-top: 2px solid rgba(92, 224, 214, 0.12);
+            border-right: 2px solid rgba(92, 224, 214, 0.12);
+            border-radius: 0 28px 0 0;
+            pointer-events: none;
+        }
+
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: -1px;
+            width: 70px;
+            height: 70px;
+            border-bottom: 2px solid rgba(255, 110, 180, 0.1);
+            border-left: 2px solid rgba(255, 110, 180, 0.1);
+            border-radius: 0 0 0 28px;
+            pointer-events: none;
+        }
+
+        /* Glow behind card */
+        .card-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle,
+                rgba(255, 110, 180, 0.06) 0%,
+                rgba(92, 224, 214, 0.03) 40%,
+                transparent 65%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(30px);
+            pointer-events: none;
+        }
+
+        /* ===== NAME ===== */
+        .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        .card-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: #45d4ce;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6eb4, #45d4ce);
+            margin: 0 auto 30px;
+            border-radius: 1px;
+        }
+
+        /* ===== SCAN TEXT ===== */
+        .scan-instruction {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .scan-line {
+            width: 25px;
+            height: 1px;
+            background: rgba(92, 224, 214, 0.2);
+        }
+
+        .scan-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: rgba(92, 224, 214, 0.6);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* ===== QR CODE FRAME ===== */
+        .qr-frame {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Scanning corners */
+        .qr-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .qr-corner.tl {
+            top: 0;
+            left: 0;
+            border-top: 2px solid #ff6eb4;
+            border-left: 2px solid #ff6eb4;
+        }
+
+        .qr-corner.tr {
+            top: 0;
+            right: 0;
+            border-top: 2px solid #45d4ce;
+            border-right: 2px solid #45d4ce;
+        }
+
+        .qr-corner.bl {
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid #45d4ce;
+            border-left: 2px solid #45d4ce;
+        }
+
+        .qr-corner.br {
+            bottom: 0;
+            right: 0;
+            border-bottom: 2px solid #ff6eb4;
+            border-right: 2px solid #ff6eb4;
+        }
+
+        /* QR code container */
+        #qrcode {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow:
+                0 0 30px rgba(255, 110, 180, 0.08),
+                0 0 60px rgba(92, 224, 214, 0.04);
+        }
+
+        #qrcode canvas {
+            border-radius: 4px;
+        }
+
+        /* Scanning animation line */
+        .scan-beam {
+            position: absolute;
+            width: calc(100% - 10px);
+            height: 2px;
+            left: 5px;
+            top: 20px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(69, 212, 206, 0.4),
+                rgba(255, 110, 180, 0.4),
+                transparent);
+            animation: scanBeam 3s ease-in-out infinite;
+            pointer-events: none;
+            border-radius: 1px;
+            filter: blur(0.5px);
+        }
+
+        @keyframes scanBeam {
+            0% { top: 20px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: calc(100% - 20px); opacity: 0; }
+        }
+
+        /* ===== PHONE ICON HINT ===== */
+        .phone-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            padding: 10px 20px;
+            background: rgba(92, 224, 214, 0.04);
+            border: 1px solid rgba(92, 224, 214, 0.08);
+            border-radius: 50px;
+            display: inline-flex;
+        }
+
+        .phone-hint i {
+            color: #45d4ce;
+            font-size: 0.75rem;
+        }
+
+        .phone-hint span {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: rgba(230, 210, 220, 0.55);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== INFO MINI CARDS ===== */
+        .mini-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .mini-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .mini-row:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(92, 224, 214, 0.1);
+        }
+
+        .mini-row i {
+            color: #ff6eb4;
+            font-size: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .mini-row span {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: rgba(240, 225, 235, 0.7);
+        }
+
+        .mini-row a {
+            color: rgba(240, 225, 235, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .mini-row a:hover {
+            color: #ff6eb4;
+        }
+
+        /* ===== SOCIAL ===== */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-row a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(92, 224, 214, 0.12);
+            color: rgba(92, 224, 214, 0.5);
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-row a:hover {
+            background: linear-gradient(135deg, #ff6eb4, #e6207a);
+            border-color: #ff6eb4;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 110, 180, 0.3);
+        }
+
+        /* ===== OR DIVIDER ===== */
+        .or-section {
+            margin: 35px 0 5px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .or-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .or-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            color: rgba(230, 210, 220, 0.3);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* ===== DIRECT SAVE BUTTON ===== */
+        .save-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 14px 30px;
+            border: 1px solid rgba(255, 110, 180, 0.2);
+            border-radius: 50px;
+            background: transparent;
+            color: #ff6eb4;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            text-decoration: none;
+        }
+
+        .save-btn:hover {
+            background: linear-gradient(135deg, #ff6eb4, #e6207a);
+            border-color: #ff6eb4;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(255, 110, 180, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* ===== DECORATIONS ===== */
+        .deco-bracket {
+            position: fixed;
+            font-family: 'Space Mono', monospace;
+            color: rgba(92, 224, 214, 0.05);
+            font-size: 10rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .deco-bracket.left { top: 15%; left: 15px; }
+        .deco-bracket.right { bottom: 8%; right: 15px; }
+
+        .deco-coords {
+            position: fixed;
+            bottom: 20px;
+            right: 35px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            color: rgba(92, 224, 214, 0.1);
+            letter-spacing: 2px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 30px 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6eb4, #45d4ce);
+            margin: 0 auto 12px;
+            border-radius: 1px;
+        }
+
+        .footer p {
+            font-size: 0.65rem;
+            color: rgba(230, 210, 220, 0.2);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .footer a {
+            color: rgba(255, 110, 180, 0.35);
+            text-decoration: none;
+        }
+
+        .footer a:hover { color: #ff6eb4; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 600px) {
+            nav { padding: 15px 20px; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.6rem; letter-spacing: 2px; }
+
+            .main { padding: 100px 20px 40px; }
+
+            .contact-card { padding: 40px 28px; border-radius: 22px; }
+            .card-name { font-size: 1.8rem; }
+
+            .deco-bracket { display: none; }
+            .deco-coords { display: none; }
+        }
+
+        @media (max-width: 400px) {
+            .nav-links a { font-size: 0.5rem; letter-spacing: 1px; }
+            .nav-links { gap: 8px; }
+            .logo { font-size: 0.85rem; padding: 4px 8px; }
+
+            #qrcode { padding: 10px; }
+            .card-name { font-size: 1.5rem; letter-spacing: 1px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="logo">EO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- BG GRID -->
+    <div class="bg-grid">
+        <div class="grid-line-h" style="top: 12%"></div>
+        <div class="grid-line-h" style="top: 30%"></div>
+        <div class="grid-line-h" style="top: 55%"></div>
+        <div class="grid-line-h" style="top: 78%"></div>
+        <div class="grid-line-v" style="left: 10%"></div>
+        <div class="grid-line-v" style="left: 35%"></div>
+        <div class="grid-line-v" style="left: 65%"></div>
+        <div class="grid-line-v" style="left: 90%"></div>
+    </div>
+
+    <!-- DECORATIONS -->
+    <div class="deco-bracket left">{</div>
+    <div class="deco-bracket right">}</div>
+    <div class="deco-coords">contact.establish()</div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- GLOW -->
+        <div class="card-glow"></div>
+
+        <!-- CARD -->
+        <div class="contact-card">
+
+            <h1 class="card-name">Elizabeth Orr</h1>
+            <p class="card-title">Engineer</p>
+
+            <div class="divider"></div>
+
+            <!-- SCAN INSTRUCTION -->
+            <div class="scan-instruction">
+                <div class="scan-line"></div>
+                <span class="scan-text">Scan to save contact</span>
+                <div class="scan-line"></div>
+            </div>
+
+            <!-- QR CODE -->
+            <div class="qr-frame">
+                <div class="qr-corner tl"></div>
+                <div class="qr-corner tr"></div>
+                <div class="qr-corner bl"></div>
+                <div class="qr-corner br"></div>
+                <div class="scan-beam"></div>
+                <div id="qrcode"></div>
+            </div>
+
+            <br>
+
+            <!-- HINT -->
+            <div class="phone-hint">
+                <i class="fas fa-camera"></i>
+                <span>Point your phone camera at the QR code</span>
+            </div>
+
+            <!-- MINI INFO -->
+            <div class="mini-info">
+                <div class="mini-row">
+                    <i class="fas fa-envelope"></i>
+                    <span><a href="mailto:your.email@example.com">your.email@example.com</a></span>
+                </div>
+                <div class="mini-row">
+                    <i class="fas fa-phone"></i>
+                    <span><a href="tel:+15551234567">(555) 123-4567</a></span>
+                </div>
+                <div class="mini-row">
+                    <i class="fas fa-globe"></i>
+                    <span><a href="https://elizathenerd.github.io" target="_blank">elizathenerd.github.io</a></span>
+                </div>
+            </div>
+
+            <!-- SOCIALS -->
+            <div class="social-row">
+                <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/elizathenerd" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://youtube.com/" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- OR -->
+            <div class="or-section">
+                <div class="or-line"></div>
+                <span class="or-text">or</span>
+                <div class="or-line"></div>
+            </div>
+
+            <!-- DIRECT DOWNLOAD -->
+            <a href="#" class="save-btn" id="saveBtn">
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-line"></div>
+        <p>&copy; 2025 <a href="index.html">Elizabeth Orr</a></p>
+    </div>
+
+    <!-- QR CODE LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        // ==========================================
+        // UPDATE YOUR INFO HERE
+        // ==========================================
+        const contactInfo = {
+            firstName: 'Elizabeth',
+            lastName: 'Orr',
+            phone: '+15551234567',
+            email: 'your.email@example.com',
+            website: 'https://elizathenerd.github.io',
+            title: 'Engineer',
+            linkedin: 'https://linkedin.com/in/your-profile'
+        };
+
+        // Build vCard string
+        const vCard =
+`BEGIN:VCARD
+VERSION:3.0
+N:${contactInfo.lastName};${contactInfo.firstName};;;
+FN:${contactInfo.firstName} ${contactInfo.lastName}
+TITLE:${contactInfo.title}
+TEL;TYPE=CELL:${contactInfo.phone}
+EMAIL:${contactInfo.email}
+URL:${contactInfo.website}
+URL:${contactInfo.linkedin}
+END:VCARD`;
+
+        // Generate QR Code
+        const qrcode = new QRCode(document.getElementById('qrcode'), {
+            text: vCard,
+            width: 200,
+            height: 200,
+            colorDark: '#1e0d25',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+
+        // Download vCard button
+        document.getElementById('saveBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const blob = new Blob([vCard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `${contactInfo.firstName}_${contactInfo.lastName}.vcf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+</html>
